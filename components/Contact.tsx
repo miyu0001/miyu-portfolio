@@ -47,67 +47,51 @@ export default function Contact() {
 
         {/* ── Contact ── */}
         <div className="pt-10 md:pt-20 pb-8 md:pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
-
-            {/* Left: headline + email CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.85, ease }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.85, ease }}
+          >
+            <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FF5A3C] mb-6">
+              <span className="w-4 h-px bg-[#FF5A3C]" />
+              Contact
+            </p>
+            <h3
+              className="font-bold text-white leading-[1.1] mb-4"
+              style={{ fontSize: "clamp(1.8rem, 3vw, 3.2rem)" }}
             >
-              <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FF5A3C] mb-6">
-                <span className="w-4 h-px bg-[#FF5A3C]" />
-                Contact
-              </p>
-              <h3
-                className="font-bold text-white leading-[1.1] mb-5"
-                style={{ fontSize: "clamp(1.8rem, 3vw, 3rem)" }}
-              >
-                Feel free to<br />
-                <span className="font-serif font-normal italic" style={{ color: "#FF3D8B" }}>
-                  reach out or connect.
-                </span>
-              </h3>
-              <p className="text-white/35 leading-[1.85] mb-8 max-w-[360px]" style={{ fontSize: "clamp(13px, 1.1vw, 15px)" }}>
-                Always happy to connect — whether it&apos;s a collaboration, a project, or just to say hello.
-              </p>
+              Feel free to reach out<br />
+              <span className="font-serif font-normal italic" style={{ color: "#FF3D8B" }}>
+                or connect anytime.
+              </span>
+            </h3>
+            <p className="text-white/35 leading-[1.85] mb-8 max-w-[440px]" style={{ fontSize: "clamp(13px, 1.1vw, 15px)" }}>
+              Always happy to connect — whether it&apos;s a collaboration, a project, or just to say hello.
+            </p>
+
+            {/* Email CTA + social icons on same row */}
+            <div className="flex flex-wrap items-center gap-3">
               <a
                 href="mailto:miyuba0192@gmail.com"
-                className="inline-flex items-center gap-2.5 font-bold text-white bg-[#FF5A3C] hover:bg-[#ff4020] transition-colors duration-300 px-7 py-3.5 rounded-full text-[13px] tracking-[0.04em]"
+                className="inline-flex items-center gap-2.5 font-bold text-white bg-[#FF5A3C] hover:bg-[#ff4020] transition-colors duration-300 px-6 py-3.5 rounded-full text-[13px] tracking-[0.04em]"
               >
                 miyuba0192@gmail.com ↗
               </a>
-            </motion.div>
-
-            {/* Right: social icon row */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.85, delay: 0.15, ease }}
-              className="flex flex-col justify-center"
-            >
-              <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/25 mb-4">
-                Follow along
-              </p>
-              <div className="flex gap-3">
-                {socials.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={s.label}
-                    className="group w-14 h-14 rounded-2xl border border-white/[0.08] flex items-center justify-center text-white/35 hover:text-white hover:border-white/25 hover:bg-white/[0.06] transition-all duration-300"
-                  >
-                    {s.icon}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-
-          </div>
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="group w-12 h-12 rounded-2xl border border-white/[0.08] flex items-center justify-center text-white/35 hover:text-white hover:border-white/25 hover:bg-white/[0.06] transition-all duration-300"
+                >
+                  {s.icon}
+                </a>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
         {/* ── Support / Buy Me a Coffee ── */}

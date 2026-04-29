@@ -118,7 +118,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.35, ease }}
-          className="px-6 py-4 flex gap-7 flex-shrink-0 border-b border-black/[0.05]"
+          className="px-6 py-4 flex justify-around flex-shrink-0 border-b border-black/[0.05]"
         >
           {[
             { num: "3+",     label: "Years Creating" },
@@ -140,26 +140,22 @@ export default function Hero() {
           className="px-6 pt-5 pb-8 flex-1 flex flex-col justify-between"
         >
           <div>
-            <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.26em] uppercase text-[#FF5A3C] mb-3">
-              <span className="w-4 h-px bg-[#FF5A3C] shrink-0" />
-              Creator / Learning in Public
-            </p>
             <h1
               className="font-bold text-[#111] leading-[1.15] mb-2"
-              style={{ fontSize: "clamp(22px, 6.5vw, 32px)" }}
+              style={{ fontSize: "clamp(24px, 7vw, 34px)" }}
             >
               Building and sharing<br />
               my journey through<br />
               language, design,<br />
               and creation.
             </h1>
-            <p className="text-[11px] font-semibold tracking-[0.14em] text-[#BBB]">
-              Tokyo-based
+            <p className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#CCC] mt-2">
+              Tokyo · Creator · Learning in Public
             </p>
           </div>
-          <div className="flex flex-col gap-2.5 w-fit mt-5">
-            <a href="#works" className="btn btn-dark">View Projects →</a>
-            <a href="#contact" className="btn btn-outline">Get in Touch →</a>
+          <div className="flex gap-3 mt-5">
+            <a href="#works" className="btn btn-dark flex-1 text-center">View Projects →</a>
+            <a href="#contact" className="btn btn-outline flex-1 text-center">Get in Touch →</a>
           </div>
         </motion.div>
       </div>
@@ -260,7 +256,7 @@ export default function Hero() {
             style={{ padding: "28px", boxShadow: "0 16px 56px rgba(0,0,0,0.11), 0 4px 14px rgba(0,0,0,0.06)" }}>
             <div className="flex items-start justify-between mb-5">
               <div>
-                <p className="font-bold text-[#111] leading-none mb-1.5" style={{ fontSize: "50px" }}>7+</p>
+                <p className="font-bold text-[#111] leading-none mb-1.5" style={{ fontSize: "50px" }}>3+</p>
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#AAA]">Years Creating</p>
               </div>
               <CircleBadge />

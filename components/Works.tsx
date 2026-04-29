@@ -179,79 +179,72 @@ export default function Works() {
         </div>
 
         <div className="relative mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            {/* Left: text */}
-            <motion.div
-              initial={{ opacity: 0, x: -28 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.85, ease }}
-            >
-              <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-white/30 mb-4">
-                <span className="w-4 h-px bg-[#FF3D8B]" />
-                Projects · 3-2
-              </p>
-
-              <h2
-                className="font-bold text-white leading-[1.06] mb-5"
-                style={{ fontSize: "clamp(1.9rem, 3.5vw, 3.6rem)" }}
-              >
-                Product<br />Experiments
-              </h2>
-
-              <div className="flex items-center gap-2 mb-7">
-                <span
-                  className="text-[10px] font-bold px-3.5 py-1.5 rounded-full border"
-                  style={{ color: "#FF85BA", background: "#FF3D8B12", borderColor: "#FF3D8B38" }}
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.75, ease }}
+            className="mb-10 md:mb-12"
+          >
+            <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-white/30 mb-3">
+              <span className="w-4 h-px bg-[#FF3D8B]" />
+              Projects · 3-2
+            </p>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              <div>
+                <h2
+                  className="font-bold text-white leading-[1.1] mb-3"
+                  style={{ fontSize: "clamp(1.8rem, 3.5vw, 3.6rem)" }}
                 >
-                  In Progress
-                </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF3D8B] animate-pulse" />
+                  Product Experiments
+                </h2>
+                <p className="text-[13.5px] text-white/45 leading-[1.75] max-w-[520px]">
+                  Building small apps and tools to solve real problems — especially in language learning.
+                </p>
               </div>
+              <a
+                href="https://bonjour-miyu.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] font-bold tracking-[0.18em] uppercase text-white/30 hover:text-[#FF3D8B] transition-colors duration-300 shrink-0 mb-1"
+              >
+                Open App ↗
+              </a>
+            </div>
+          </motion.div>
 
-              <p className="text-white/50 leading-[1.85] text-[14px] mb-5 max-w-[400px]">
-                I build small apps and tools to solve problems I personally face,
-                especially in language learning.
-              </p>
+          {/* Meta bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease }}
+            className="flex flex-wrap items-center gap-4 mb-6 px-1"
+          >
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FF3D8B] animate-pulse" />
+              <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#FF85BA]">In Progress</span>
+            </div>
+            {["AI-powered", "FR × JP", "UX-first"].map((tag) => (
+              <span
+                key={tag}
+                className="text-[10px] font-semibold px-3 py-1 rounded-full"
+                style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.30)", border: "1px solid rgba(255,255,255,0.08)" }}
+              >
+                {tag}
+              </span>
+            ))}
+          </motion.div>
 
-              <div className="hidden md:block space-y-2.5 mb-8 max-w-[380px]">
-                {[
-                  "Improving real-world language usage",
-                  "Making learning more natural and practical",
-                  "Bridging the gap between textbook learning and real communication",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-2.5">
-                    <span className="text-[#FF3D8B] mt-0.5 shrink-0">↗</span>
-                    <p className="text-white/35 text-[13px] leading-[1.7]">{item}</p>
-                  </div>
-                ))}
-              </div>
-
-              <p className="hidden md:block text-[11px] tracking-[0.14em] text-white/20 mb-7">
-                Currently developing and iterating on early-stage products.
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {["AI-powered", "FR × JP", "Daily lessons", "UX-first"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[10px] font-semibold px-3 py-1.5 rounded-full"
-                    style={{ background: "rgba(255,255,255,0.05)", color: "rgba(255,255,255,0.35)", border: "1px solid rgba(255,255,255,0.09)" }}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Right: app carousel */}
-            <motion.div
-              initial={{ opacity: 0, x: 28 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.85, delay: 0.15, ease }}
-            >
+          {/* Full-width carousel */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.7, ease }}
+          >
               <div
                 className="flex gap-4 overflow-x-auto pb-3"
                 style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
@@ -321,9 +314,8 @@ export default function Works() {
                 ))}
               </div>
               <p className="text-[10px] text-white/20 tracking-[0.1em] mt-2">Swipe to explore →</p>
-            </motion.div>
+          </motion.div>
 
-          </div>
         </div>
       </section>
 
@@ -332,67 +324,56 @@ export default function Works() {
       ════════════════════════════════════════ */}
       <section id="design" className="bg-[#FFF8F5] py-10 md:py-28">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-            {/* Left */}
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.85, ease }}
-            >
-              <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FF5A3C] mb-4">
-                <span className="w-4 h-px bg-[#FF5A3C]" />
-                Projects · 3-3
-              </p>
-              <h2
-                className="font-bold text-[#111] leading-[1.1] mb-5"
-                style={{ fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)" }}
-              >
-                Design<br />Exploration
-              </h2>
-              <p className="text-[14px] text-[#666] leading-[1.85] mb-7 max-w-[420px]">
-                I am currently learning UI/UX design through hands-on projects using Figma and AI tools.
-                Focusing on progress over perfection, and documenting the learning process.
-              </p>
-
-              <div className="space-y-3 mb-8">
-                {[
-                  "Improving layout and visual hierarchy",
-                  "Learning how to design clear and intuitive interfaces",
-                  "Iterating based on practice and feedback",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-2.5">
-                    <span className="text-[#FF5A3C] mt-0.5 shrink-0 text-[12px]">✦</span>
-                    <p className="text-[13px] text-[#666] leading-[1.7]">{item}</p>
-                  </div>
-                ))}
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.75, ease }}
+            className="mb-10 md:mb-12"
+          >
+            <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FF5A3C] mb-3">
+              <span className="w-4 h-px bg-[#FF5A3C]" />
+              Projects · 3-3
+            </p>
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+              <div>
+                <h2
+                  className="font-bold text-[#111111] leading-[1.1] mb-3"
+                  style={{ fontSize: "clamp(1.8rem, 3.5vw, 3.6rem)" }}
+                >
+                  Design Exploration
+                </h2>
+                <p className="text-[13.5px] text-[#888] leading-[1.75] max-w-[520px]">
+                  Learning UI/UX design through Figma and AI tools — focusing on progress over perfection.
+                </p>
               </div>
-
               <a
                 href="#contact"
-                className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-[0.16em] uppercase text-[#AAA] hover:text-[#FF5A3C] transition-colors duration-300"
+                className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#AAAAAA] hover:text-[#FF5A3C] transition-colors duration-300 shrink-0 mb-1"
               >
                 Get in Touch ↗
               </a>
-            </motion.div>
+            </div>
+          </motion.div>
 
-            {/* Right: Coming Soon carousel */}
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.85, delay: 0.1, ease }}
+          {/* Full-width carousel */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.06 }}
+            transition={{ duration: 0.7, ease }}
+            className="mb-8"
+          >
+            <div
+              className="flex gap-4 overflow-x-auto pb-3"
+              style={{
+                scrollSnapType: "x mandatory",
+                WebkitOverflowScrolling: "touch",
+                scrollbarWidth: "none",
+              }}
             >
-              {/* Carousel */}
-              <div
-                className="flex gap-3 overflow-x-auto pb-3 mb-3"
-                style={{
-                  scrollSnapType: "x mandatory",
-                  WebkitOverflowScrolling: "touch",
-                  scrollbarWidth: "none",
-                }}
-              >
                 {[
                   { label: "Figma Explorations", tag: "UI/UX",      tagColor: "#FF7262", bg: "linear-gradient(135deg, #FFE8E6 0%, #FFF0EF 100%)" },
                   { label: "AI Visual Projects",  tag: "AI Design",  tagColor: "#FF3D8B", bg: "linear-gradient(135deg, #FFE0EE 0%, #FFF0F6 100%)" },
@@ -441,9 +422,8 @@ export default function Works() {
               <p className="text-[10px] text-[#CCC] tracking-[0.1em] mb-1">
                 Swipe to explore →
               </p>
-            </motion.div>
+          </motion.div>
 
-          </div>
         </div>
       </section>
     </>
