@@ -9,25 +9,48 @@ const pillars = [
     color: "#FF5A3C",
     bg: "#FF5A3C0D",
     title: "Language Learning",
-    desc: "Exploring French and Japanese — not just grammar, but culture, nuance, and real communication.",
+    desc: "French × Japanese — culture, nuance, real communication.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        <path d="M8 10h8M8 13h5"/>
+      </svg>
+    ),
   },
   {
     color: "#FF3D8B",
     bg: "#FF3D8B0D",
     title: "App Development",
-    desc: "Building small tools to solve problems I personally face, especially in language learning.",
+    desc: "Building tools to solve problems I personally face.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="5" y="2" width="14" height="20" rx="2"/>
+        <path d="M9 7h6M9 11h6M9 15h4"/>
+      </svg>
+    ),
   },
   {
     color: "#FF5A3C",
     bg: "#FF5A3C0D",
     title: "Content Creation",
-    desc: "Documenting the journey on YouTube — progress, struggles, and everything in between.",
+    desc: "Documenting my journey on YouTube — raw and real.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+      </svg>
+    ),
   },
   {
     color: "#FF3D8B",
     bg: "#FF3D8B0D",
     title: "Design Exploration",
-    desc: "Learning UI/UX through hands-on projects with Figma and AI tools, iteration by iteration.",
+    desc: "Learning UI/UX with Figma and AI, iteration by iteration.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 20h9"/>
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+      </svg>
+    ),
   },
 ];
 
@@ -116,7 +139,12 @@ export default function About() {
                   className="rounded-xl p-4 border border-black/[0.05]"
                   style={{ background: p.bg }}
                 >
-                  <span className="text-xs mb-2.5 block" style={{ color: p.color }}>✦</span>
+                  <div
+                    className="w-9 h-9 rounded-lg flex items-center justify-center mb-3"
+                    style={{ background: p.color + "18", color: p.color }}
+                  >
+                    {p.icon}
+                  </div>
                   <p className="font-bold text-[#111111] text-[13px] mb-1">{p.title}</p>
                   <p className="text-[11.5px] text-[#888888] leading-[1.7]">{p.desc}</p>
                 </motion.div>

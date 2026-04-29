@@ -11,11 +11,6 @@ const videos = [
   { thumb: "/images/thumb-travaille.png",tag: "Vlog",         title: "Working remotely from Tokyo",                tagColor: "#FF5A3C" },
 ];
 
-const learned = [
-  "Learning becomes more meaningful when shared",
-  "Consistency matters more than perfection",
-  "Communication is not just language, but culture",
-];
 
 const designTools = [
   { label: "Figma",    color: "#FF7262", bg: "#FF726215" },
@@ -165,23 +160,6 @@ export default function Works() {
             </div>
           </motion.div>
 
-          {/* What I learned */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, delay: 0.1, ease }}
-            className="flex flex-wrap gap-2"
-          >
-            {learned.map((l) => (
-              <span
-                key={l}
-                className="text-[11px] font-semibold px-4 py-2 rounded-full border border-black/[0.08] text-[#666] bg-white"
-              >
-                {l}
-              </span>
-            ))}
-          </motion.div>
 
         </div>
       </section>
@@ -267,102 +245,83 @@ export default function Works() {
               </div>
             </motion.div>
 
-            {/* Right: app visual */}
+            {/* Right: app carousel */}
             <motion.div
               initial={{ opacity: 0, x: 28 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.85, delay: 0.15, ease }}
-              className="relative flex items-center justify-center"
-              style={{ minHeight: "460px" }}
             >
-              {/* Subtle glow ring behind */}
               <div
-                aria-hidden
-                className="absolute rounded-3xl"
-                style={{
-                  zIndex: 0,
-                  inset: "8%",
-                  background: "linear-gradient(135deg, rgba(255,61,139,0.12), rgba(255,90,60,0.08))",
-                  filter: "blur(24px)",
-                }}
-              />
-
-              {/* Main app image — clickable link */}
-              <motion.a
-                href="https://bonjour-miyu.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-                className="relative rounded-2xl overflow-hidden"
-                style={{
-                  zIndex: 2,
-                  width: "min(400px, 90%)",
-                  boxShadow: "0 20px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08)",
-                  display: "block",
-                }}
+                className="flex gap-4 overflow-x-auto pb-3"
+                style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
               >
-                <Image
-                  src="/images/app-hero.png"
-                  alt="Language App UI — Bonjour Miyu"
-                  width={640}
-                  height={840}
-                  className="w-full h-auto block"
-                  style={{ filter: "brightness(1.08) contrast(1.02)" }}
-                />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-white/0 hover:bg-white/[0.04] transition-colors duration-300 flex items-center justify-center">
-                  <span className="opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black/60 text-white text-[11px] font-bold tracking-[0.1em] px-4 py-2 rounded-full">
-                    Try the App ↗
-                  </span>
-                </div>
-              </motion.a>
-
-              {/* FR/JP chip */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-                className="absolute flex items-center gap-2 px-3 py-2 rounded-xl border border-white/10"
-                style={{ zIndex: 3, top: "8%", right: "4%", background: "rgba(255,255,255,0.07)", backdropFilter: "blur(14px)" }}
-              >
-                <span className="text-[10px] font-bold text-[#FF3D8B]">FR</span>
-                <div className="w-px h-3 bg-white/20" />
-                <span className="text-[10px] font-bold text-white/55">JP</span>
-              </motion.div>
-
-              {/* AI active chip */}
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 1.0 }}
-                className="absolute flex items-center gap-2 px-3 py-2 rounded-xl"
-                style={{
-                  zIndex: 3,
-                  bottom: "10%",
-                  left: "4%",
-                  background: "linear-gradient(90deg, rgba(255,61,139,0.18), rgba(255,61,139,0.06))",
-                  backdropFilter: "blur(14px)",
-                  border: "1px solid rgba(255,61,139,0.25)",
-                }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF3D8B] animate-pulse" />
-                <span className="text-[10px] font-bold text-[#FF85BA]">AI Lesson Active</span>
-              </motion.div>
-
-              {/* "Try it" label */}
-              <div
-                className="absolute flex items-center gap-1.5"
-                style={{ zIndex: 3, bottom: "10%", right: "4%" }}
-              >
+                {/* Card 1: Bonjour Miyu — live */}
                 <a
                   href="https://bonjour-miyu.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[10px] font-bold tracking-[0.14em] uppercase text-white/30 hover:text-[#FF3D8B] transition-colors duration-300"
+                  className="group relative shrink-0 rounded-2xl overflow-hidden"
+                  style={{ width: "min(240px, 68vw)", aspectRatio: "9/16", scrollSnapAlign: "start", display: "block" }}
                 >
-                  Open App ↗
+                  <Image
+                    src="/images/app-hero.png"
+                    alt="Bonjour Miyu App"
+                    fill
+                    sizes="240px"
+                    className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  {/* Live badge */}
+                  <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-[#FF3D8B]/90 px-2.5 py-1 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    <span className="text-[9px] font-bold text-white tracking-[0.1em]">LIVE</span>
+                  </div>
+                  {/* FR/JP badge */}
+                  <div className="absolute top-3 right-3 flex items-center gap-1 bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full border border-white/20">
+                    <span className="text-[9px] font-bold text-[#FF85BA]">FR</span>
+                    <span className="text-white/30 text-[8px]">/</span>
+                    <span className="text-[9px] font-bold text-white/55">JP</span>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <p className="text-white font-bold text-[13px] mb-0.5">Bonjour Miyu</p>
+                    <p className="text-white/55 text-[10px] mb-2.5">French × Japanese learning app</p>
+                    <span className="text-[10px] font-bold text-[#FF85BA] tracking-[0.08em]">Try App ↗</span>
+                  </div>
                 </a>
+
+                {/* Cards 2–3: Coming Soon */}
+                {[
+                  { label: "Vocab Trainer",    sub: "AI Flash Cards",  glow: "#FF3D8B" },
+                  { label: "Pronunciation AI", sub: "Speech Practice", glow: "#FF5A3C" },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="relative shrink-0 rounded-2xl overflow-hidden border border-white/[0.07]"
+                    style={{
+                      width: "min(240px, 68vw)",
+                      aspectRatio: "9/16",
+                      scrollSnapAlign: "start",
+                      background: "linear-gradient(135deg, #1c0d14 0%, #0e0e12 100%)",
+                    }}
+                  >
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
+                      <div className="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(255,255,255,0.04)" }}>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="text-[8px] font-black tracking-[0.22em] uppercase text-white/30 block mb-2">Coming Soon</span>
+                        <p className="text-white/50 font-semibold text-[13px]">{item.label}</p>
+                        <p className="text-white/25 text-[10px] mt-1">{item.sub}</p>
+                      </div>
+                    </div>
+                    <div aria-hidden className="absolute inset-0 pointer-events-none" style={{ background: `radial-gradient(circle at 50% 50%, ${item.glow}08 0%, transparent 70%)` }} />
+                  </div>
+                ))}
               </div>
+              <p className="text-[10px] text-white/20 tracking-[0.1em] mt-2">Swipe to explore →</p>
             </motion.div>
 
           </div>
@@ -480,27 +439,9 @@ export default function Works() {
                 ))}
               </div>
 
-              <p className="text-[10px] text-[#CCC] tracking-[0.1em] mb-5">
+              <p className="text-[10px] text-[#CCC] tracking-[0.1em] mb-1">
                 Swipe to explore →
               </p>
-
-              {/* Progress note */}
-              <div className="rounded-2xl p-5 border border-black/[0.05] bg-[#F8F7F4]">
-                <div className="flex justify-between items-center mb-2.5">
-                  <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#AAA]">Learning Progress</span>
-                  <span className="text-[10px] font-bold text-[#FF5A3C]">Active</span>
-                </div>
-                <div className="h-1 w-full rounded-full bg-black/[0.06] overflow-hidden">
-                  <motion.div
-                    initial={{ width: "0%" }}
-                    whileInView={{ width: "55%" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
-                    className="h-full rounded-full bg-[#FF5A3C]"
-                  />
-                </div>
-                <p className="text-[10px] text-[#CCC] mt-1.5">Continuously iterating and improving</p>
-              </div>
             </motion.div>
 
           </div>
