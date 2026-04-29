@@ -70,14 +70,15 @@ export default function Contact() {
               Always happy to connect — whether it&apos;s a collaboration, a project, or just to say hello.
             </p>
 
-            {/* Email CTA + social icons on same row */}
-            <div className="flex flex-wrap items-center gap-3">
-              <a
-                href="mailto:miyuba0192@gmail.com"
-                className="inline-flex items-center gap-2.5 font-bold text-white bg-[#FF5A3C] hover:bg-[#ff4020] transition-colors duration-300 px-6 py-3.5 rounded-full text-[13px] tracking-[0.04em]"
-              >
-                miyuba0192@gmail.com ↗
-              </a>
+            {/* Email CTA */}
+            <a
+              href="mailto:miyuba0192@gmail.com"
+              className="inline-flex items-center gap-2.5 font-bold text-white bg-[#FF5A3C] hover:bg-[#ff4020] transition-colors duration-300 px-6 py-3.5 rounded-full text-[13px] tracking-[0.04em]"
+            >
+              miyuba0192@gmail.com ↗
+            </a>
+            {/* Social icons — own row, never wraps with email */}
+            <div className="flex gap-3 mt-4">
               {socials.map((s) => (
                 <a
                   key={s.label}

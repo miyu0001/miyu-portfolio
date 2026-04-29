@@ -22,10 +22,38 @@ const designTools = [
 export default function Works() {
   return (
     <>
+      {/* ── Projects chapter header ── */}
+      <section id="works" className="bg-[#111111] py-12 md:py-20">
+        <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.75, ease }}
+          >
+            <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FF5A3C] mb-4">
+              <span className="w-4 h-px bg-[#FF5A3C]" />
+              Selected Works
+            </p>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+              <h2
+                className="font-black text-white leading-none"
+                style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}
+              >
+                Projects
+              </h2>
+              <p className="text-white/30 text-[13px] leading-[1.75] max-w-[300px] md:mb-2">
+                YouTube content, language apps, and design experiments — all built and shared in public.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ════════════════════════════════════════
-          3-1  YouTube Journey
+          01  YouTube Journey
       ════════════════════════════════════════ */}
-      <section id="works" className="bg-[#FFF5F0] py-10 md:py-28">
+      <section className="bg-white py-10 md:py-28">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
 
           {/* Header */}
@@ -38,7 +66,7 @@ export default function Works() {
           >
             <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FF5A3C] mb-3">
               <span className="w-4 h-px bg-[#FF5A3C]" />
-              Projects · 3-1
+              YouTube Channel
             </p>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
@@ -190,7 +218,7 @@ export default function Works() {
           >
             <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-white/30 mb-3">
               <span className="w-4 h-px bg-[#FF3D8B]" />
-              Projects · 3-2
+              App Development
             </p>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
@@ -335,7 +363,7 @@ export default function Works() {
           >
             <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FF5A3C] mb-3">
               <span className="w-4 h-px bg-[#FF5A3C]" />
-              Projects · 3-3
+              Design
             </p>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
@@ -349,12 +377,9 @@ export default function Works() {
                   Learning UI/UX design through Figma and AI tools — focusing on progress over perfection.
                 </p>
               </div>
-              <a
-                href="#contact"
-                className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#AAAAAA] hover:text-[#FF5A3C] transition-colors duration-300 shrink-0 mb-1"
-              >
-                Get in Touch ↗
-              </a>
+              <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#FF5A3C]/60 shrink-0 mb-1">
+                Coming Soon
+              </span>
             </div>
           </motion.div>
 

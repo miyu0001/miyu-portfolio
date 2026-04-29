@@ -100,9 +100,8 @@ export default function About() {
               className="font-bold text-[#111111] leading-[1.06] mb-6"
               style={{ fontSize: "clamp(1.9rem, 3.5vw, 4rem)" }}
             >
-              Learning.<br />
-              Building.<br />
-              <span className="text-[#FF3D8B] font-serif font-normal italic">Sharing.</span>
+              Creating things<br />
+              <span className="text-[#FF3D8B] font-serif font-normal italic">I wish existed.</span>
             </h2>
 
             <p

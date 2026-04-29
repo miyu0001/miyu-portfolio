@@ -141,21 +141,21 @@ export default function Hero() {
         >
           <div>
             <h1
-              className="font-bold text-[#111] leading-[1.15] mb-2"
-              style={{ fontSize: "clamp(24px, 7vw, 34px)" }}
+              className="font-bold text-[#111] leading-[1.12] mb-2"
+              style={{ fontSize: "clamp(28px, 8vw, 38px)" }}
             >
-              Building and sharing<br />
-              my journey through<br />
-              language, design,<br />
-              and creation.
+              Building in public.{" "}
+              <span className="font-serif font-normal italic" style={{ color: "#FF3D8B" }}>
+                Sharing it all.
+              </span>
             </h1>
             <p className="text-[10px] font-semibold tracking-[0.15em] uppercase text-[#CCC] mt-2">
               Tokyo · Creator · Learning in Public
             </p>
           </div>
-          <div className="flex gap-3 mt-5">
-            <a href="#works" className="btn btn-dark flex-1 text-center">View Projects →</a>
-            <a href="#contact" className="btn btn-outline flex-1 text-center">Get in Touch →</a>
+          <div className="flex flex-col gap-2.5 mt-6">
+            <a href="#works" className="btn btn-dark w-full">View Projects →</a>
+            <a href="#contact" className="btn btn-outline w-full">Get in Touch →</a>
           </div>
         </motion.div>
       </div>
