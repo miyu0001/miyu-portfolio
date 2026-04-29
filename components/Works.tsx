@@ -191,7 +191,7 @@ export default function Works() {
       ════════════════════════════════════════ */}
       <section
         id="products"
-        className="relative overflow-hidden py-24 md:py-32"
+        className="relative overflow-hidden py-14 md:py-32"
         style={{ background: "linear-gradient(135deg, #0e0e12 0%, #111116 50%, #1a0d12 100%)" }}
       >
         {/* Glow */}
@@ -237,7 +237,7 @@ export default function Works() {
                 especially in language learning.
               </p>
 
-              <div className="space-y-2.5 mb-8 max-w-[380px]">
+              <div className="hidden md:block space-y-2.5 mb-8 max-w-[380px]">
                 {[
                   "Improving real-world language usage",
                   "Making learning more natural and practical",
@@ -250,7 +250,7 @@ export default function Works() {
                 ))}
               </div>
 
-              <p className="text-[11px] tracking-[0.14em] text-white/20 mb-7">
+              <p className="hidden md:block text-[11px] tracking-[0.14em] text-white/20 mb-7">
                 Currently developing and iterating on early-stage products.
               </p>
 

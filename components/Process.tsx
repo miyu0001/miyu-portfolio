@@ -36,7 +36,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="bg-[#FFF0EC] py-20 md:py-28">
+    <section id="process" className="bg-[#FFF0EC] py-12 md:py-28">
       <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
 
         {/* Header */}
@@ -60,7 +60,7 @@ export default function Process() {
         </motion.div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
           {steps.map((s, i) => (
             <motion.div
               key={s.title}
@@ -68,22 +68,21 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.1, ease }}
-              className="group rounded-2xl p-7 border border-black/[0.05] hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-shadow duration-500"
+              className="group rounded-2xl p-4 md:p-7 border border-black/[0.05] hover:shadow-[0_8px_32px_rgba(0,0,0,0.07)] transition-shadow duration-500"
               style={{ background: s.bg }}
             >
               <p
-                className="text-[11px] font-black tracking-[0.1em] mb-5"
+                className="text-[11px] font-black tracking-[0.1em] mb-3 md:mb-5"
                 style={{ color: s.color }}
               >
                 {s.num}
               </p>
               <h3
-                className="font-bold text-[#111] mb-3"
-                style={{ fontSize: "clamp(1.3rem, 2vw, 1.8rem)" }}
+                className="font-bold text-[#111] mb-2 md:mb-3 text-[1rem] md:text-[1.4rem]"
               >
                 {s.title}
               </h3>
-              <p className="text-[13px] text-[#888] leading-[1.75]">{s.desc}</p>
+              <p className="text-[12px] md:text-[13px] text-[#888] leading-[1.65]">{s.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -149,7 +149,7 @@ export default function Contact() {
           className="pb-20 md:pb-28"
         >
           <div
-            className="rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-8 border border-white/[0.07]"
+            className="rounded-2xl p-7 md:p-10 flex flex-col md:flex-row md:items-center gap-6 md:gap-8 border border-white/[0.07]"
             style={{
               background: "linear-gradient(135deg, rgba(255,221,0,0.06) 0%, rgba(255,90,60,0.06) 50%, rgba(255,255,255,0.02) 100%)",
             }}
@@ -178,7 +178,7 @@ export default function Contact() {
               href="https://buymeacoffee.com/bonjour.miyu"
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center gap-2.5 font-black text-[#111] bg-[#FFDD00] hover:bg-[#ffe933] active:scale-95 transition-all duration-200 px-7 py-4 rounded-full text-[14px] tracking-[0.03em] whitespace-nowrap shadow-[0_8px_32px_rgba(255,221,0,0.25)]"
+              className="w-full md:w-auto shrink-0 justify-center inline-flex items-center gap-2.5 font-black text-[#111] bg-[#FFDD00] hover:bg-[#ffe933] active:scale-95 transition-all duration-200 px-7 py-4 rounded-full text-[14px] tracking-[0.03em] whitespace-nowrap shadow-[0_8px_32px_rgba(255,221,0,0.25)]"
             >
               ☕ Buy Me a Coffee
             </a>
