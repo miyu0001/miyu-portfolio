@@ -30,7 +30,7 @@ export default function Works() {
       {/* ════════════════════════════════════════
           3-1  YouTube Journey
       ════════════════════════════════════════ */}
-      <section id="works" className="bg-[#FFF5F0] py-20 md:py-28">
+      <section id="works" className="bg-[#FFF5F0] py-10 md:py-28">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
 
           {/* Header */}
@@ -191,7 +191,7 @@ export default function Works() {
       ════════════════════════════════════════ */}
       <section
         id="products"
-        className="relative overflow-hidden py-14 md:py-32"
+        className="relative overflow-hidden py-10 md:py-32"
         style={{ background: "linear-gradient(135deg, #0e0e12 0%, #111116 50%, #1a0d12 100%)" }}
       >
         {/* Glow */}
@@ -372,7 +372,7 @@ export default function Works() {
       {/* ════════════════════════════════════════
           3-3  Design Exploration
       ════════════════════════════════════════ */}
-      <section id="design" className="bg-[#FFF8F5] py-20 md:py-28">
+      <section id="design" className="bg-[#FFF8F5] py-10 md:py-28">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
@@ -419,37 +419,73 @@ export default function Works() {
               </a>
             </motion.div>
 
-            {/* Right: tools grid */}
+            {/* Right: Coming Soon carousel */}
             <motion.div
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.85, delay: 0.1, ease }}
-              className="grid grid-cols-2 gap-4"
             >
-              {[
-                { label: "Figma",     icon: "✦", color: "#FF7262", bg: "#FFF0EF", desc: "UI/UX design & prototyping" },
-                { label: "AI Tools",  icon: "✦", color: "#FF3D8B", bg: "#FFF0F6", desc: "AI-assisted visual creation" },
-                { label: "Framer",    icon: "✦", color: "#0099FF", bg: "#EBF7FF", desc: "Interactive prototyping" },
-                { label: "Luma Labs", icon: "✦", color: "#333",    bg: "#F4F4F4", desc: "AI video & image generation" },
-              ].map((t, i) => (
-                <motion.div
-                  key={t.label}
-                  initial={{ opacity: 0, y: 14 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease }}
-                  className="rounded-2xl p-5 border border-black/[0.05]"
-                  style={{ background: t.bg }}
-                >
-                  <span className="text-lg mb-3 block" style={{ color: t.color }}>{t.icon}</span>
-                  <p className="font-bold text-[#111] text-[14px] mb-1">{t.label}</p>
-                  <p className="text-[11.5px] text-[#888] leading-[1.6]">{t.desc}</p>
-                </motion.div>
-              ))}
+              {/* Carousel */}
+              <div
+                className="flex gap-3 overflow-x-auto pb-3 mb-3"
+                style={{
+                  scrollSnapType: "x mandatory",
+                  WebkitOverflowScrolling: "touch",
+                  scrollbarWidth: "none",
+                }}
+              >
+                {[
+                  { label: "Figma Explorations", tag: "UI/UX",      tagColor: "#FF7262", bg: "linear-gradient(135deg, #FFE8E6 0%, #FFF0EF 100%)" },
+                  { label: "AI Visual Projects",  tag: "AI Design",  tagColor: "#FF3D8B", bg: "linear-gradient(135deg, #FFE0EE 0%, #FFF0F6 100%)" },
+                  { label: "Framer Prototypes",   tag: "Prototype",  tagColor: "#0099FF", bg: "linear-gradient(135deg, #E0F0FF 0%, #EBF7FF 100%)" },
+                  { label: "Luma AI Content",     tag: "AI Video",   tagColor: "#555555", bg: "linear-gradient(135deg, #EBEBEB 0%, #F5F5F5 100%)" },
+                ].map((item, i) => (
+                  <div
+                    key={i}
+                    className="relative shrink-0 rounded-2xl overflow-hidden"
+                    style={{
+                      width: "calc(50% - 6px)",
+                      minWidth: "180px",
+                      aspectRatio: "16/9",
+                      scrollSnapAlign: "start",
+                      background: item.bg,
+                    }}
+                  >
+                    {/* Tag */}
+                    <span
+                      className="absolute top-3 left-3 text-[9px] font-bold px-2.5 py-1 rounded-full text-white z-10"
+                      style={{ background: item.tagColor }}
+                    >
+                      {item.tag}
+                    </span>
+
+                    {/* Coming Soon overlay */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center z-10 gap-1.5">
+                      <div className="w-8 h-8 rounded-full bg-white/80 shadow-sm flex items-center justify-center">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                      </div>
+                      <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#666] bg-white/75 backdrop-blur-sm px-2.5 py-1 rounded-full border border-black/[0.07]">
+                        Coming Soon
+                      </span>
+                    </div>
+
+                    {/* Title at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 p-2.5 bg-gradient-to-t from-black/15 to-transparent">
+                      <p className="text-[11px] font-semibold text-[#444] leading-snug">{item.label}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-[10px] text-[#CCC] tracking-[0.1em] mb-5">
+                Swipe to explore →
+              </p>
 
               {/* Progress note */}
-              <div className="col-span-2 rounded-2xl p-5 border border-black/[0.05] bg-[#F8F7F4]">
+              <div className="rounded-2xl p-5 border border-black/[0.05] bg-[#F8F7F4]">
                 <div className="flex justify-between items-center mb-2.5">
                   <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#AAA]">Learning Progress</span>
                   <span className="text-[10px] font-bold text-[#FF5A3C]">Active</span>

@@ -32,91 +32,44 @@ export default function Hero() {
       ══════════════════════════════════════════════ */}
       <div className="md:hidden flex flex-col" style={{ minHeight: "100svh" }}>
 
-        {/* ── Text block ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.75, ease }}
-          className="px-6 pt-24 pb-4 flex-shrink-0"
+        {/* ── Visual area — FIRST at top ── */}
+        <div
+          className="relative overflow-hidden flex-shrink-0"
+          style={{ height: "58svh", minHeight: "320px" }}
         >
-          <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.26em] uppercase text-[#FF5A3C] mb-4">
-            <span className="w-4 h-px bg-[#FF5A3C] shrink-0" />
-            Creator / Learning in Public
-          </p>
-          <h1
-            className="font-bold text-[#111] leading-[1.15] mb-3"
-            style={{ fontSize: "clamp(25px, 7vw, 36px)" }}
-          >
-            Building and sharing<br />
-            my journey through<br />
-            language, design,<br />
-            and creation.
-          </h1>
-          <p className="text-[11px] font-semibold tracking-[0.14em] text-[#BBB] mb-5">
-            Tokyo-based
-          </p>
-          {/* Stacked buttons — no overflow */}
-          <div className="flex flex-col gap-2.5 w-fit">
-            <a href="#works" className="btn btn-dark">View Projects →</a>
-            <a href="#contact" className="btn btn-outline">Get in Touch →</a>
-          </div>
-        </motion.div>
-
-        {/* ── Stats strip ── */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.3, ease }}
-          className="px-6 pb-4 flex gap-7 flex-shrink-0 border-b border-black/[0.05]"
-        >
-          {[
-            { num: "7+",     label: "Years Creating" },
-            { num: "Active", label: "YouTube" },
-            { num: "2",      label: "Apps in Dev" },
-          ].map((s) => (
-            <div key={s.label}>
-              <p className="font-bold text-[#111] text-[16px] leading-none">{s.num}</p>
-              <p className="text-[10px] text-[#AAAAAA] mt-0.5 tracking-[0.06em]">{s.label}</p>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* ── Visual area — fills remaining height ── */}
-        <div className="relative flex-1 overflow-hidden" style={{ minHeight: "300px" }}>
-
-          {/* Arch — uses FM x:"-50%" to avoid transform override bug */}
+          {/* Arch — oval at top, rounds in at bottom */}
           <motion.div
             aria-hidden
-            initial={{ scaleY: 0.84, opacity: 0 }}
+            initial={{ scaleY: 0.88, opacity: 0 }}
             animate={{ scaleY: 1, opacity: 1 }}
-            transition={{ duration: 1.0, delay: 0.12, ease }}
+            transition={{ duration: 1.0, delay: 0.1, ease }}
             style={{
               x: "-50%",
               position: "absolute",
-              bottom: 0,
+              top: 0,
               left: "50%",
               width: "min(360px, 100%)",
               height: "100%",
-              borderRadius: "50% 50% 0 0",
+              borderRadius: "0 0 50% 50%",
               background: "linear-gradient(180deg, #ff9066 0%, #FF5A3C 45%, #ff3d1f 100%)",
-              transformOrigin: "bottom center",
+              transformOrigin: "top center",
               zIndex: 1,
             }}
           />
 
-          {/* Person — fills arch shape exactly */}
+          {/* Person — fills arch oval exactly */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.9, delay: 0.28, ease }}
+            transition={{ duration: 0.9, delay: 0.25, ease }}
             style={{
               x: "-50%",
               position: "absolute",
-              bottom: 0,
+              top: 0,
               left: "50%",
               width: "min(360px, 100%)",
               height: "100%",
-              borderRadius: "50% 50% 0 0",
+              borderRadius: "0 0 50% 50%",
               overflow: "hidden",
               zIndex: 2,
               pointerEvents: "none",
@@ -148,8 +101,8 @@ export default function Hero() {
               rotate: -4,
               position: "absolute",
               left: "50%",
-              bottom: "16%",
-              width: "290px",
+              bottom: "14%",
+              width: "260px",
               maxWidth: "none",
               height: "auto",
               zIndex: 3,
@@ -158,38 +111,57 @@ export default function Hero() {
               mixBlendMode: "screen",
             }}
           />
-
-          {/* Footer — semi-transparent over arch bottom */}
-          <div
-            className="absolute bottom-0 left-0 right-0 px-5 py-3 z-10 flex items-center justify-between"
-            style={{
-              background: "rgba(255,255,255,0.88)",
-              backdropFilter: "blur(8px)",
-              borderTop: "1px solid rgba(0,0,0,0.07)",
-            }}
-          >
-            <p className="text-[9px] font-semibold tracking-[0.12em] uppercase text-[#CCC]">
-              © 2026 Miyu Sato
-            </p>
-            <div className="flex gap-4">
-              {[
-                { label: "YouTube",   href: "https://www.youtube.com/@BonjourMiyu" },
-                { label: "Instagram", href: "https://www.instagram.com/miyu0001_/?hl=ja" },
-                { label: "Email",     href: "mailto:miyuba0192@gmail.com" },
-              ].map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target={s.href.startsWith("http") ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  className="text-[9px] font-bold tracking-[0.12em] uppercase text-[#BBB] hover:text-[#111] transition-colors"
-                >
-                  {s.label}
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
+
+        {/* ── Stats strip ── */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.35, ease }}
+          className="px-6 py-4 flex gap-7 flex-shrink-0 border-b border-black/[0.05]"
+        >
+          {[
+            { num: "7+",     label: "Years Creating" },
+            { num: "Active", label: "YouTube" },
+            { num: "2",      label: "Apps in Dev" },
+          ].map((s) => (
+            <div key={s.label}>
+              <p className="font-bold text-[#111] text-[16px] leading-none">{s.num}</p>
+              <p className="text-[10px] text-[#AAAAAA] mt-0.5 tracking-[0.06em]">{s.label}</p>
+            </div>
+          ))}
+        </motion.div>
+
+        {/* ── Text + buttons — BOTTOM ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.15, ease }}
+          className="px-6 pt-5 pb-8 flex-1 flex flex-col justify-between"
+        >
+          <div>
+            <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.26em] uppercase text-[#FF5A3C] mb-3">
+              <span className="w-4 h-px bg-[#FF5A3C] shrink-0" />
+              Creator / Learning in Public
+            </p>
+            <h1
+              className="font-bold text-[#111] leading-[1.15] mb-2"
+              style={{ fontSize: "clamp(22px, 6.5vw, 32px)" }}
+            >
+              Building and sharing<br />
+              my journey through<br />
+              language, design,<br />
+              and creation.
+            </h1>
+            <p className="text-[11px] font-semibold tracking-[0.14em] text-[#BBB]">
+              Tokyo-based
+            </p>
+          </div>
+          <div className="flex flex-col gap-2.5 w-fit mt-5">
+            <a href="#works" className="btn btn-dark">View Projects →</a>
+            <a href="#contact" className="btn btn-outline">Get in Touch →</a>
+          </div>
+        </motion.div>
       </div>
 
       {/* ══════════════════════════════════════════════
