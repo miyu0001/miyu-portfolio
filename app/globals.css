@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-serif: var(--font-cormorant), serif;
+  --font-sans: var(--font-dm-sans), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─────────────────────────────────────────────────────────
+   ROOT CAUSE FIX:
+   Previously "* { margin:0 }" was UNLAYERED → it beat every
+   Tailwind utility in @layer utilities, including mx-auto.
+   Moving the reset into @layer base restores the correct
+   cascade: utilities > components > base.
+───────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    width: 100%;
+    min-height: 100%;
+  }
+  body {
+    background-color: #ffffff;
+    color: #111111;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: #f4f3f0; }
+::-webkit-scrollbar-thumb { background: #ff5a3c; }
+::selection { background: #6c3bff; color: #fff; }
+
+/* ── Animations ─────────────────────────────────────── */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 32s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.spin-slow { animation: spin-slow 12s linear infinite; }
+
+/* ── Buttons ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 52px;
+  padding: 0 28px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+.btn:hover { transform: translateY(-2px) scale(1.02); }
+
+.btn-dark {
+  background: #111111;
+  color: #fff;
+  border: 1.5px solid #111111;
+}
+.btn-dark:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.22); }
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid rgba(0,0,0,0.2);
+  color: #111111;
+}
+.btn-outline:hover {
+  background: #111111;
+  color: #fff;
+  border-color: #111111;
+}
+
+.btn-coral {
+  background: #ff5a3c;
+  color: #fff;
+  border: 1.5px solid #ff5a3c;
+}
+.btn-coral:hover {
+  background: #e54832;
+  box-shadow: 0 12px 32px rgba(255,90,60,0.35);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.8);
+}
+.btn-ghost:hover {
+  border-color: rgba(255,255,255,0.55);
+  color: #fff;
+  background: rgba(255,255,255,0.07);
 }
