@@ -45,31 +45,8 @@ export default function Contact() {
 
       <div className="relative mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
 
-        {/* ── Vision quote ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.9, ease }}
-          className="pt-10 md:pt-24 pb-6 md:pb-14 border-b border-white/[0.06]"
-        >
-          <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FF5A3C] mb-5">
-            <span className="w-4 h-px bg-[#FF5A3C]" />
-            Vision
-          </p>
-          <h2
-            className="font-bold text-white leading-[1.12] max-w-[640px]"
-            style={{ fontSize: "clamp(1.4rem, 2.4vw, 2.6rem)" }}
-          >
-            I want to create products and content{" "}
-            <span className="font-serif font-normal italic" style={{ color: "#FF3D8B" }}>
-              that connect people across cultures.
-            </span>
-          </h2>
-        </motion.div>
-
         {/* ── Contact ── */}
-        <div className="pt-10 md:pt-28 pb-8 md:pb-16">
+        <div className="pt-10 md:pt-20 pb-8 md:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
             {/* Left: headline + email CTA */}

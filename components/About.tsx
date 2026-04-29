@@ -105,28 +105,14 @@ export default function About() {
               <span className="text-[#FF3D8B] font-serif font-normal italic">Sharing.</span>
             </h2>
 
-            <div
-              className="text-[#666] leading-[1.95] mb-8 space-y-4"
+            <p
+              className="text-[#666] leading-[1.85] mb-8"
               style={{ fontSize: "clamp(13px, 1.1vw, 15px)", maxWidth: "420px" }}
             >
-              <p>
-                I enjoy watching people grow — seeing someone work toward a goal
-                and gradually improve over time. I see myself as being in that process as well.
-              </p>
-              <p>
-                I love trying new things, and right now I&apos;m exploring language learning,
-                app development, and design. Through these, I continue to learn, build,
-                and share at the same time.
-              </p>
-              <p>
-                By sharing my journey across different fields, I hope to inspire
-                at least one person to take a step forward.
-              </p>
-              <p className="text-[#AAA]">
-                I&apos;m still in the middle of my journey —<br />
-                and I want to continue creating while valuing the process itself.
-              </p>
-            </div>
+              Tokyo-based creator building in public — learning languages, making apps,
+              and documenting the journey on YouTube.
+              I&apos;m still in the middle of it all, and I want to keep going.
+            </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-9">
               {pillars.map((p, i) => (

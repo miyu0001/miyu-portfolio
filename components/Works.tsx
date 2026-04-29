@@ -262,62 +262,61 @@ export default function Works() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative shrink-0 rounded-2xl overflow-hidden"
-                  style={{ width: "min(240px, 68vw)", aspectRatio: "9/16", scrollSnapAlign: "start", display: "block" }}
+                  style={{ width: "calc(25% - 12px)", minWidth: "260px", aspectRatio: "16/9", scrollSnapAlign: "start", display: "block" }}
                 >
                   <Image
                     src="/images/app-hero.png"
                     alt="Bonjour Miyu App"
                     fill
-                    sizes="240px"
-                    className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
+                    sizes="(max-width: 768px) 80vw, 25vw"
+                    className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                  {/* Live badge */}
                   <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-[#FF3D8B]/90 px-2.5 py-1 rounded-full">
                     <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                     <span className="text-[9px] font-bold text-white tracking-[0.1em]">LIVE</span>
                   </div>
-                  {/* FR/JP badge */}
-                  <div className="absolute top-3 right-3 flex items-center gap-1 bg-white/10 backdrop-blur-sm px-2 py-1 rounded-full border border-white/20">
-                    <span className="text-[9px] font-bold text-[#FF85BA]">FR</span>
-                    <span className="text-white/30 text-[8px]">/</span>
-                    <span className="text-[9px] font-bold text-white/55">JP</span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <p className="text-white font-bold text-[13px] mb-0.5">Bonjour Miyu</p>
-                    <p className="text-white/55 text-[10px] mb-2.5">French × Japanese learning app</p>
-                    <span className="text-[10px] font-bold text-[#FF85BA] tracking-[0.08em]">Try App ↗</span>
+                  <div className="absolute bottom-0 left-0 right-0 p-3">
+                    <p className="text-white font-bold text-[12px] mb-0.5">Bonjour Miyu</p>
+                    <p className="text-white/55 text-[10px]">French × Japanese learning app ↗</p>
                   </div>
                 </a>
 
-                {/* Cards 2–3: Coming Soon */}
+                {/* Cards 2–3: Coming Soon — same style as 3-3 */}
                 {[
-                  { label: "Vocab Trainer",    sub: "AI Flash Cards",  glow: "#FF3D8B" },
-                  { label: "Pronunciation AI", sub: "Speech Practice", glow: "#FF5A3C" },
+                  { label: "Vocab Trainer",    tag: "AI Flash Cards",  tagColor: "#FF3D8B", bg: "linear-gradient(135deg, #FFE0EE 0%, #FFF0F6 100%)" },
+                  { label: "Pronunciation AI", tag: "Speech Practice", tagColor: "#FF5A3C", bg: "linear-gradient(135deg, #FFE8E6 0%, #FFF0EF 100%)" },
                 ].map((item, i) => (
                   <div
                     key={i}
-                    className="relative shrink-0 rounded-2xl overflow-hidden border border-white/[0.07]"
+                    className="relative shrink-0 rounded-2xl overflow-hidden"
                     style={{
-                      width: "min(240px, 68vw)",
-                      aspectRatio: "9/16",
+                      width: "calc(25% - 12px)",
+                      minWidth: "260px",
+                      aspectRatio: "16/9",
                       scrollSnapAlign: "start",
-                      background: "linear-gradient(135deg, #1c0d14 0%, #0e0e12 100%)",
+                      background: item.bg,
                     }}
                   >
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
-                      <div className="w-12 h-12 rounded-2xl border border-white/10 flex items-center justify-center" style={{ background: "rgba(255,255,255,0.04)" }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <span
+                      className="absolute top-3 left-3 text-[9px] font-bold px-2.5 py-1 rounded-full text-white z-10"
+                      style={{ background: item.tagColor }}
+                    >
+                      {item.tag}
+                    </span>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 z-10">
+                      <div className="w-8 h-8 rounded-full bg-white/80 shadow-sm flex items-center justify-center">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                           <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                         </svg>
                       </div>
-                      <div>
-                        <span className="text-[8px] font-black tracking-[0.22em] uppercase text-white/30 block mb-2">Coming Soon</span>
-                        <p className="text-white/50 font-semibold text-[13px]">{item.label}</p>
-                        <p className="text-white/25 text-[10px] mt-1">{item.sub}</p>
-                      </div>
+                      <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#666] bg-white/75 backdrop-blur-sm px-2.5 py-1 rounded-full border border-black/[0.07]">
+                        Coming Soon
+                      </span>
                     </div>
-                    <div aria-hidden className="absolute inset-0 pointer-events-none" style={{ background: `radial-gradient(circle at 50% 50%, ${item.glow}08 0%, transparent 70%)` }} />
+                    <div className="absolute bottom-0 left-0 right-0 p-2.5 bg-gradient-to-t from-black/15 to-transparent">
+                      <p className="text-[11px] font-semibold text-[#444] leading-snug">{item.label}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -404,8 +403,8 @@ export default function Works() {
                     key={i}
                     className="relative shrink-0 rounded-2xl overflow-hidden"
                     style={{
-                      width: "calc(50% - 6px)",
-                      minWidth: "180px",
+                      width: "calc(25% - 12px)",
+                      minWidth: "260px",
                       aspectRatio: "16/9",
                       scrollSnapAlign: "start",
                       background: item.bg,
