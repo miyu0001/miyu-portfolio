@@ -37,7 +37,7 @@ export default function Hero() {
           className="relative overflow-hidden flex-shrink-0"
           style={{ height: "58svh", minHeight: "320px" }}
         >
-          {/* Arch — oval at top, rounds in at bottom */}
+          {/* Arch — rounded top (original shape) */}
           <motion.div
             aria-hidden
             initial={{ scaleY: 0.88, opacity: 0 }}
@@ -50,14 +50,14 @@ export default function Hero() {
               left: "50%",
               width: "min(360px, 100%)",
               height: "100%",
-              borderRadius: "0 0 50% 50%",
+              borderRadius: "50% 50% 0 0",
               background: "linear-gradient(180deg, #ff9066 0%, #FF5A3C 45%, #ff3d1f 100%)",
               transformOrigin: "top center",
               zIndex: 1,
             }}
           />
 
-          {/* Person — fills arch oval exactly */}
+          {/* Person — fills arch shape exactly */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -69,7 +69,7 @@ export default function Hero() {
               left: "50%",
               width: "min(360px, 100%)",
               height: "100%",
-              borderRadius: "0 0 50% 50%",
+              borderRadius: "50% 50% 0 0",
               overflow: "hidden",
               zIndex: 2,
               pointerEvents: "none",
@@ -121,7 +121,7 @@ export default function Hero() {
           className="px-6 py-4 flex gap-7 flex-shrink-0 border-b border-black/[0.05]"
         >
           {[
-            { num: "7+",     label: "Years Creating" },
+            { num: "3+",     label: "Years Creating" },
             { num: "Active", label: "YouTube" },
             { num: "2",      label: "Apps in Dev" },
           ].map((s) => (
