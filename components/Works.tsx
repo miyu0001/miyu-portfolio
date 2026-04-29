@@ -23,8 +23,13 @@ export default function Works() {
   return (
     <>
       {/* ── Projects chapter header ── */}
-      <section id="works" className="bg-[#111111] py-12 md:py-20">
-        <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
+      <section id="works" className="relative overflow-hidden py-12 md:py-20" style={{ background: "linear-gradient(135deg, #0e0e12 0%, #111116 60%, #1a0d12 100%)" }}>
+        {/* Glow accents */}
+        <div aria-hidden className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#FF5A3C]/[0.07] blur-[120px]" />
+          <div className="absolute top-0 right-1/4 w-[350px] h-[350px] rounded-full bg-[#FF3D8B]/[0.06] blur-[100px]" />
+        </div>
+        <div className="relative mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
