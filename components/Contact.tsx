@@ -73,7 +73,7 @@ export default function Contact() {
             {/* Email CTA */}
             <a
               href="mailto:miyuba0192@gmail.com"
-              className="inline-flex items-center gap-2.5 font-bold text-white bg-[#FF5A3C] hover:bg-[#ff4020] transition-colors duration-300 px-6 py-3.5 rounded-full text-[13px] tracking-[0.04em]"
+              className="inline-flex w-full md:w-auto justify-center items-center gap-2.5 font-bold text-white bg-[#FF5A3C] hover:bg-[#ff4020] transition-colors duration-300 px-6 py-3.5 rounded-full text-[13px] tracking-[0.04em]"
             >
               miyuba0192@gmail.com ↗
             </a>

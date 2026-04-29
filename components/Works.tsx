@@ -23,33 +23,35 @@ export default function Works() {
   return (
     <>
       {/* ── Projects chapter header ── */}
-      <section id="works" className="relative overflow-hidden py-12 md:py-20" style={{ background: "linear-gradient(135deg, #0e0e12 0%, #111116 60%, #1a0d12 100%)" }}>
-        {/* Glow accents */}
-        <div aria-hidden className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#FF5A3C]/[0.07] blur-[120px]" />
-          <div className="absolute top-0 right-1/4 w-[350px] h-[350px] rounded-full bg-[#FF3D8B]/[0.06] blur-[100px]" />
-        </div>
-        <div className="relative mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
+      <section id="works" className="bg-white border-t-2 border-[#FF5A3C] py-7 md:py-10">
+        <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.75, ease }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.55, ease }}
+            className="flex flex-col sm:flex-row sm:items-center justify-between gap-4"
           >
-            <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FF5A3C] mb-4">
-              <span className="w-4 h-px bg-[#FF5A3C]" />
-              Selected Works
-            </p>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-              <h2
-                className="font-black text-white leading-none"
-                style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}
-              >
-                Projects
-              </h2>
-              <p className="text-white/30 text-[13px] leading-[1.75] max-w-[300px] md:mb-2">
-                YouTube content, language apps, and design experiments — all built and shared in public.
-              </p>
+            <h2
+              className="font-black text-[#111] leading-none tracking-tight"
+              style={{ fontSize: "clamp(2.8rem, 8vw, 7.5rem)" }}
+            >
+              PROJECTS
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { num: "01", label: "YouTube" },
+                { num: "02", label: "App Dev" },
+                { num: "03", label: "Design" },
+              ].map((item) => (
+                <span
+                  key={item.num}
+                  className="inline-flex items-center gap-1.5 text-[11px] font-bold px-3.5 py-1.5 rounded-full border border-black/[0.1] text-[#888]"
+                >
+                  <span className="font-black" style={{ color: "#FF5A3C" }}>{item.num}</span>
+                  {item.label}
+                </span>
+              ))}
             </div>
           </motion.div>
         </div>
