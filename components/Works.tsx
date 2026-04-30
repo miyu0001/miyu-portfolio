@@ -15,20 +15,25 @@ export default function Works() {
   return (
     <>
       {/* ── Projects chapter header ── */}
-      <section id="works" className="bg-white border-t-2 border-[#FF5A3C] py-7 md:py-10">
+      <section id="works" className="bg-white border-t-2 border-[#FF5A3C] py-8 md:py-12">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.55, ease }}
+            className="flex items-center gap-5"
           >
             <h2
-              className="font-black text-[#111] leading-none tracking-tight"
-              style={{ fontSize: "clamp(2.8rem, 8vw, 7.5rem)" }}
+              className="font-black text-[#111] leading-none tracking-tight shrink-0"
+              style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)" }}
             >
               PROJECTS
             </h2>
+            <div className="flex-1 h-px bg-black/10" />
+            <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#BBBBBB] shrink-0">
+              03 works · 2026
+            </span>
           </motion.div>
         </div>
       </section>
@@ -36,7 +41,7 @@ export default function Works() {
       {/* ════════════════════════════════════════
           01  YouTube Channel
       ════════════════════════════════════════ */}
-      <section className="bg-white py-10 md:py-28">
+      <section className="bg-white py-10 md:py-24">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
 
           {/* Header */}
@@ -47,13 +52,24 @@ export default function Works() {
             transition={{ duration: 0.75, ease }}
             className="mb-10 md:mb-12"
           >
+            {/* Rule row */}
+            <div className="flex items-center gap-4 mb-5">
+              <span
+                className="font-black tracking-[0.08em] shrink-0 leading-none"
+                style={{ fontSize: "clamp(0.75rem, 1.2vw, 1rem)", color: "#FF5A3C" }}
+              >
+                01
+              </span>
+              <div className="flex-1 h-px bg-black/10" />
+            </div>
+
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <h2
-                  className="font-black text-[#111111] leading-[1.05] mb-3"
-                  style={{ fontSize: "clamp(2.4rem, 5vw, 5rem)" }}
+                  className="font-bold text-[#111111] leading-[1.1] mb-3"
+                  style={{ fontSize: "clamp(1.7rem, 3vw, 2.8rem)" }}
                 >
-                  <span style={{ color: "#FF5A3C" }}>01 </span>YouTube Channel
+                  YouTube Channel
                 </h2>
                 <p className="text-[13.5px] text-[#888] leading-[1.75] max-w-[520px]">
                   I create videos documenting my journey of learning French while sharing my daily life in Tokyo.
@@ -141,15 +157,12 @@ export default function Works() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
                   <div className="absolute inset-0 bg-black/0 group-hover/v:bg-black/12 transition-colors duration-400" />
-
                   <span
                     className="absolute top-3 left-3 text-[9px] font-bold px-2.5 py-1 rounded-full text-white"
                     style={{ background: v.tagColor }}
                   >
                     {v.tag}
                   </span>
-
-                  {/* Play icon on hover */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="opacity-0 group-hover/v:opacity-100 scale-75 group-hover/v:scale-100 transition-all duration-300">
                       <div className="w-10 h-10 rounded-full bg-white/90 shadow-xl flex items-center justify-center">
@@ -157,7 +170,6 @@ export default function Works() {
                       </div>
                     </div>
                   </div>
-
                   <p className="absolute bottom-0 left-0 right-0 p-3 text-white font-semibold text-[12px] leading-snug line-clamp-2">
                     {v.title}
                   </p>
@@ -172,11 +184,7 @@ export default function Works() {
       {/* ════════════════════════════════════════
           02  App Development
       ════════════════════════════════════════ */}
-      <section
-        id="products"
-        className="py-10 md:py-32"
-        style={{ background: "#F0F4FF" }}
-      >
+      <section id="products" className="py-10 md:py-24" style={{ background: "#F0F4FF" }}>
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
 
           {/* Header */}
@@ -187,13 +195,24 @@ export default function Works() {
             transition={{ duration: 0.75, ease }}
             className="mb-10 md:mb-12"
           >
+            {/* Rule row */}
+            <div className="flex items-center gap-4 mb-5">
+              <span
+                className="font-black tracking-[0.08em] shrink-0 leading-none"
+                style={{ fontSize: "clamp(0.75rem, 1.2vw, 1rem)", color: "#FF3D8B" }}
+              >
+                02
+              </span>
+              <div className="flex-1 h-px bg-black/10" />
+            </div>
+
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <h2
-                  className="font-black text-[#111111] leading-[1.05] mb-3"
-                  style={{ fontSize: "clamp(2.4rem, 5vw, 5rem)" }}
+                  className="font-bold text-[#111111] leading-[1.1] mb-3"
+                  style={{ fontSize: "clamp(1.7rem, 3vw, 2.8rem)" }}
                 >
-                  <span style={{ color: "#FF3D8B" }}>02 </span>App Development
+                  App Development
                 </h2>
                 <p className="text-[13.5px] text-[#666] leading-[1.75] max-w-[520px]">
                   Building small apps and tools to solve real problems — especially in language learning.
@@ -308,7 +327,7 @@ export default function Works() {
       {/* ════════════════════════════════════════
           03  Design Exploration
       ════════════════════════════════════════ */}
-      <section id="design" className="bg-[#FFF8F5] py-10 md:py-28">
+      <section id="design" className="bg-[#FFF8F5] py-10 md:py-24">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16">
 
           {/* Header */}
@@ -319,13 +338,24 @@ export default function Works() {
             transition={{ duration: 0.75, ease }}
             className="mb-10 md:mb-12"
           >
+            {/* Rule row */}
+            <div className="flex items-center gap-4 mb-5">
+              <span
+                className="font-black tracking-[0.08em] shrink-0 leading-none"
+                style={{ fontSize: "clamp(0.75rem, 1.2vw, 1rem)", color: "#FF5A3C" }}
+              >
+                03
+              </span>
+              <div className="flex-1 h-px bg-black/10" />
+            </div>
+
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
               <div>
                 <h2
-                  className="font-black text-[#111111] leading-[1.05] mb-3"
-                  style={{ fontSize: "clamp(2.4rem, 5vw, 5rem)" }}
+                  className="font-bold text-[#111111] leading-[1.1] mb-3"
+                  style={{ fontSize: "clamp(1.7rem, 3vw, 2.8rem)" }}
                 >
-                  <span style={{ color: "#FF5A3C" }}>03 </span>Design Exploration
+                  Design Exploration
                 </h2>
                 <p className="text-[13.5px] text-[#888] leading-[1.75] max-w-[520px]">
                   Learning UI/UX design through Figma and AI tools — focusing on progress over perfection.
@@ -354,10 +384,10 @@ export default function Works() {
               }}
             >
               {[
-                { label: "Figma Explorations", tag: "UI/UX",      tagColor: "#FF7262", bg: "linear-gradient(135deg, #FFE8E6 0%, #FFF0EF 100%)" },
-                { label: "AI Visual Projects",  tag: "AI Design",  tagColor: "#FF3D8B", bg: "linear-gradient(135deg, #FFE0EE 0%, #FFF0F6 100%)" },
-                { label: "Framer Prototypes",   tag: "Prototype",  tagColor: "#0099FF", bg: "linear-gradient(135deg, #E0F0FF 0%, #EBF7FF 100%)" },
-                { label: "Luma AI Content",     tag: "AI Video",   tagColor: "#555555", bg: "linear-gradient(135deg, #EBEBEB 0%, #F5F5F5 100%)" },
+                { label: "Figma Explorations", tag: "UI/UX",     tagColor: "#FF7262", bg: "linear-gradient(135deg, #FFE8E6 0%, #FFF0EF 100%)" },
+                { label: "AI Visual Projects",  tag: "AI Design", tagColor: "#FF3D8B", bg: "linear-gradient(135deg, #FFE0EE 0%, #FFF0F6 100%)" },
+                { label: "Framer Prototypes",   tag: "Prototype", tagColor: "#0099FF", bg: "linear-gradient(135deg, #E0F0FF 0%, #EBF7FF 100%)" },
+                { label: "Luma AI Content",     tag: "AI Video",  tagColor: "#555555", bg: "linear-gradient(135deg, #EBEBEB 0%, #F5F5F5 100%)" },
               ].map((item, i) => (
                 <div
                   key={i}
