@@ -282,8 +282,8 @@ export default function Works() {
 
               {/* Cards 2–3: Coming Soon */}
               {[
-                { label: "Vocab Trainer",    tag: "AI Flash Cards",  tagColor: "#FF3D8B", bg: "linear-gradient(135deg, #FFE0EE 0%, #FFF0F6 100%)" },
-                { label: "Pronunciation AI", tag: "Speech Practice", tagColor: "#FF5A3C", bg: "linear-gradient(135deg, #FFE8E6 0%, #FFF0EF 100%)" },
+                { bg: "linear-gradient(135deg, #FFE0EE 0%, #FFF0F6 100%)" },
+                { bg: "linear-gradient(135deg, #FFE8E6 0%, #FFF0EF 100%)" },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -296,13 +296,7 @@ export default function Works() {
                     background: item.bg,
                   }}
                 >
-                  <span
-                    className="absolute top-3 left-3 text-[9px] font-bold px-2.5 py-1 rounded-full text-white z-10"
-                    style={{ background: item.tagColor }}
-                  >
-                    {item.tag}
-                  </span>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 z-10">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
                     <div className="w-8 h-8 rounded-full bg-white/80 shadow-sm flex items-center justify-center">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
@@ -311,9 +305,6 @@ export default function Works() {
                     <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#666] bg-white/75 backdrop-blur-sm px-2.5 py-1 rounded-full border border-black/[0.07]">
                       Coming Soon
                     </span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-2.5 bg-gradient-to-t from-black/15 to-transparent">
-                    <p className="text-[11px] font-semibold text-[#444] leading-snug">{item.label}</p>
                   </div>
                 </div>
               ))}
@@ -384,10 +375,10 @@ export default function Works() {
               }}
             >
               {[
-                { label: "Figma Explorations", tag: "UI/UX",     tagColor: "#FF7262", bg: "linear-gradient(135deg, #FFE8E6 0%, #FFF0EF 100%)" },
-                { label: "AI Visual Projects",  tag: "AI Design", tagColor: "#FF3D8B", bg: "linear-gradient(135deg, #FFE0EE 0%, #FFF0F6 100%)" },
-                { label: "Framer Prototypes",   tag: "Prototype", tagColor: "#0099FF", bg: "linear-gradient(135deg, #E0F0FF 0%, #EBF7FF 100%)" },
-                { label: "Luma AI Content",     tag: "AI Video",  tagColor: "#555555", bg: "linear-gradient(135deg, #EBEBEB 0%, #F5F5F5 100%)" },
+                { bg: "linear-gradient(135deg, #FFE8E6 0%, #FFF0EF 100%)" },
+                { bg: "linear-gradient(135deg, #FFE0EE 0%, #FFF0F6 100%)" },
+                { bg: "linear-gradient(135deg, #E0F0FF 0%, #EBF7FF 100%)" },
+                { bg: "linear-gradient(135deg, #EBEBEB 0%, #F5F5F5 100%)" },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -400,13 +391,7 @@ export default function Works() {
                     background: item.bg,
                   }}
                 >
-                  <span
-                    className="absolute top-3 left-3 text-[9px] font-bold px-2.5 py-1 rounded-full text-white z-10"
-                    style={{ background: item.tagColor }}
-                  >
-                    {item.tag}
-                  </span>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center z-10 gap-1.5">
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
                     <div className="w-8 h-8 rounded-full bg-white/80 shadow-sm flex items-center justify-center">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
@@ -415,9 +400,6 @@ export default function Works() {
                     <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#666] bg-white/75 backdrop-blur-sm px-2.5 py-1 rounded-full border border-black/[0.07]">
                       Coming Soon
                     </span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-2.5 bg-gradient-to-t from-black/15 to-transparent">
-                    <p className="text-[11px] font-semibold text-[#444] leading-snug">{item.label}</p>
                   </div>
                 </div>
               ))}
