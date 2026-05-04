@@ -28,7 +28,7 @@ export default function Works() {
               className="font-black text-[#111] leading-none tracking-tight shrink-0"
               style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)" }}
             >
-              PROJETS
+              PROJECTS
             </h2>
             <div className="flex-1 h-px bg-black/10" />
             <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#BBBBBB] shrink-0">
