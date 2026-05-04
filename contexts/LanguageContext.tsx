@@ -19,7 +19,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem("miyu-lang") as Lang | null;
-    if (stored && ["en", "ja", "fr"].includes(stored)) {
+    if (stored && ["en", "fr"].includes(stored)) {
       setLangState(stored);
     }
   }, []);

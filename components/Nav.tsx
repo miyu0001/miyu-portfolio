@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useLang } from "@/contexts/LanguageContext";
 import { Lang } from "@/lib/translations";
 
-const LANGS: Lang[] = ["en", "ja", "fr"];
+const LANGS: Lang[] = ["en", "fr"];
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);

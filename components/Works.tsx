@@ -127,8 +127,9 @@ export default function Works() {
             transition={{ duration: 0.7, ease }}
             className="mb-8"
           >
+            <div className="relative">
             <div
-              className="flex gap-4 overflow-x-auto pb-3"
+              className="flex gap-4 overflow-x-auto pb-3 [&::-webkit-scrollbar]:hidden"
               style={{
                 scrollSnapType: "x mandatory",
                 WebkitOverflowScrolling: "touch",
@@ -144,7 +145,7 @@ export default function Works() {
                   className="group/v relative shrink-0 block rounded-2xl overflow-hidden bg-gray-100"
                   style={{
                     width: "calc(25% - 12px)",
-                    minWidth: "260px",
+                    minWidth: "min(260px, 72vw)",
                     aspectRatio: "16/9",
                     scrollSnapAlign: "start",
                   }}
@@ -176,6 +177,9 @@ export default function Works() {
                   </p>
                 </a>
               ))}
+            </div>
+            {/* Right-fade scroll hint */}
+            <div className="absolute top-0 right-0 bottom-3 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none" />
             </div>
           </motion.div>
 
@@ -249,13 +253,14 @@ export default function Works() {
             viewport={{ once: true, amount: 0.06 }}
             transition={{ duration: 0.7, ease }}
           >
+            <div className="relative">
             <div
-              className="flex gap-5 overflow-x-auto pb-3"
+              className="flex gap-5 overflow-x-auto pb-3 [&::-webkit-scrollbar]:hidden"
               style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
             >
 
               {/* ── Card 1: Bonjour Miyu ── */}
-              <div className="shrink-0" style={{ width: "calc(25% - 12px)", minWidth: "260px", scrollSnapAlign: "start" }}>
+              <div className="shrink-0" style={{ width: "calc(25% - 12px)", minWidth: "min(260px, 72vw)", scrollSnapAlign: "start" }}>
                 <a
                   href="https://bonjour-miyu.vercel.app/"
                   target="_blank"
@@ -288,7 +293,7 @@ export default function Works() {
               </div>
 
               {/* ── Card 2: Miyu Prep ── */}
-              <div className="shrink-0" style={{ width: "calc(25% - 12px)", minWidth: "260px", scrollSnapAlign: "start" }}>
+              <div className="shrink-0" style={{ width: "calc(25% - 12px)", minWidth: "min(260px, 72vw)", scrollSnapAlign: "start" }}>
                 <a
                   href="https://miyu-competition-prep.vercel.app/"
                   target="_blank"
@@ -330,7 +335,7 @@ export default function Works() {
               </div>
 
               {/* ── Card 3: Coming Soon ── */}
-              <div className="shrink-0" style={{ width: "calc(25% - 12px)", minWidth: "260px", scrollSnapAlign: "start" }}>
+              <div className="shrink-0" style={{ width: "calc(25% - 12px)", minWidth: "min(260px, 72vw)", scrollSnapAlign: "start" }}>
                 <div
                   className="relative block rounded-2xl overflow-hidden"
                   style={{ aspectRatio: "16/9", background: "linear-gradient(135deg, #F2F2F7 0%, #F8F8FC 100%)" }}
@@ -350,6 +355,9 @@ export default function Works() {
                 </div>
               </div>
 
+            </div>
+            {/* Right-fade scroll hint */}
+            <div className="absolute top-0 right-0 bottom-0 w-16 pointer-events-none" style={{ background: "linear-gradient(to left, #F0F4FF, transparent)" }} />
             </div>
             <p className="text-[10px] text-[#BBBBBB] tracking-[0.1em] mt-2">{w.s02.swipe}</p>
           </motion.div>
@@ -406,8 +414,9 @@ export default function Works() {
             transition={{ duration: 0.7, ease }}
             className="mb-8"
           >
+            <div className="relative">
             <div
-              className="flex gap-4 overflow-x-auto pb-3"
+              className="flex gap-4 overflow-x-auto pb-3 [&::-webkit-scrollbar]:hidden"
               style={{
                 scrollSnapType: "x mandatory",
                 WebkitOverflowScrolling: "touch",
@@ -425,7 +434,7 @@ export default function Works() {
                   className="relative shrink-0 rounded-2xl overflow-hidden"
                   style={{
                     width: "calc(25% - 12px)",
-                    minWidth: "260px",
+                    minWidth: "min(260px, 72vw)",
                     aspectRatio: "16/9",
                     scrollSnapAlign: "start",
                     background: item.bg,
@@ -443,6 +452,9 @@ export default function Works() {
                   </div>
                 </div>
               ))}
+            </div>
+            {/* Right-fade scroll hint */}
+            <div className="absolute top-0 right-0 bottom-3 w-16 pointer-events-none" style={{ background: "linear-gradient(to left, #FFF8F5, transparent)" }} />
             </div>
             <p className="text-[10px] text-[#CCC] tracking-[0.1em] mb-1">
               {w.s03.swipe}

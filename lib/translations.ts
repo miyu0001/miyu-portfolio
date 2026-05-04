@@ -1,4 +1,4 @@
-export type Lang = "en" | "ja" | "fr";
+export type Lang = "en" | "fr";
 
 export const translations = {
   en: {
@@ -27,22 +27,21 @@ export const translations = {
           { num: "1,200+", label: "Subscribers" },
           { num: "Active", label: "YouTube Channel" },
           { num: "2",      label: "Language Apps in Dev" },
-          { num: "3",      label: "Awards Received" },
         ],
         link: "View Portfolio",
       },
     },
     about: {
       label: "About",
-      h2line: "Creating things",
-      h2italic: "I wish existed.",
-      bio: "Tokyo-based creator building in public — learning languages, making apps, and documenting the journey on YouTube. I'm still in the middle of it all, and I want to keep going.",
+      h2line: "All in,",
+      h2italic: "every time.",
+      bio: "Started learning French, realized the app I needed didn't exist — so I built it. Now I make videos about all of it from Tokyo. The languages, the apps, the design, the figuring-it-out. Whatever pulls my attention, I go all in.",
       btn: "Work Together",
       pillars: [
-        { title: "Language Learning",   desc: "French × Japanese — culture, nuance, real communication." },
-        { title: "App Development",     desc: "Building tools to solve problems I personally face." },
-        { title: "Content Creation",    desc: "Documenting my journey on YouTube — raw and real." },
-        { title: "Design Exploration",  desc: "Learning UI/UX with Figma and AI, iteration by iteration." },
+        { title: "Content Creation",   desc: "YouTube, video editing, storytelling — documenting the full journey, raw and unfiltered." },
+        { title: "Language Learning",  desc: "French × Japanese — chasing fluency, one awkward conversation at a time." },
+        { title: "App Development",    desc: "Building the tools I wished existed. Two apps live, more always in progress." },
+        { title: "Design Exploration", desc: "Learning UI/UX through Figma and AI — progress over perfection, every time." },
       ],
     },
     works: {
@@ -94,99 +93,6 @@ export const translations = {
     },
   },
 
-  ja: {
-    nav: {
-      about: "About",
-      projects: "プロジェクト",
-      contact: "Contact",
-    },
-    hero: {
-      label: "クリエイター / 公開学習中",
-      desktopH1: ["公開しながら作り、", "言語・デザイン・制作の", "旅を共有する。", ""],
-      desktopTagline: "東京在住",
-      mobileH1: "公開しながら、作る。",
-      mobileItalic: "全部さらけ出す。",
-      mobileSub: "東京 · クリエイター · 公開学習中",
-      mobileStats: [
-        { num: "3年+",   label: "制作活動" },
-        { num: "配信中", label: "YouTube" },
-        { num: "2本",    label: "開発中アプリ" },
-      ],
-      btn1: "プロジェクトを見る →",
-      btn2: "お問い合わせ →",
-      card: {
-        yearsLabel: "年間制作",
-        items: [
-          { num: "1,200+", label: "チャンネル登録者" },
-          { num: "配信中", label: "YouTubeチャンネル" },
-          { num: "2本",    label: "開発中の語学アプリ" },
-          { num: "3個",    label: "受賞歴" },
-        ],
-        link: "ポートフォリオを見る",
-      },
-    },
-    about: {
-      label: "About",
-      h2line: "欲しかったものを、",
-      h2italic: "自分で作る。",
-      bio: "東京在住のクリエイター。フランス語を学びながらアプリを作り、その過程をYouTubeで公開しています。まだ途中だけど、続けていきたい。",
-      btn: "一緒に作る",
-      pillars: [
-        { title: "語学学習",       desc: "フランス語×日本語 — 文化・ニュアンス・本物のコミュニケーション。" },
-        { title: "アプリ開発",     desc: "自分が実際に困ったことを解決するツールを作る。" },
-        { title: "コンテンツ制作", desc: "YouTubeで旅を記録 — リアルに、飾らずに。" },
-        { title: "デザイン探求",   desc: "FigmaとAIでUI/UXを学ぶ、反復しながら。" },
-      ],
-    },
-    works: {
-      header: "PROJECTS",
-      meta: "03作品 · 2026",
-      s01: {
-        label: "YouTubeチャンネル",
-        h2: "YouTubeチャンネル",
-        desc: "フランス語学習と東京での日常を記録した動画を制作しています。学習の過程をリアルに見せること — 自分のためにも、同じ旅をしている人のためにも。",
-        link: "チャンネルを見る ↗",
-        active: "配信中",
-        subs: "1,200人以上が視聴中",
-        swipe: "スワイプして見る →",
-      },
-      s02: {
-        label: "アプリ開発",
-        h2: "アプリ開発",
-        desc: "実際に困ったことを解決するアプリを作っています — 特に語学学習の分野で。",
-        link: "アプリを開く ↗",
-        live: "2本稼働中",
-        swipe: "スワイプして見る →",
-      },
-      s03: {
-        label: "デザイン",
-        h2: "デザイン探求",
-        desc: "FigmaとAIでUI/UXデザインを学ぶ — 完璧よりも進歩を大切に。",
-        coming: "準備中",
-        swipe: "スワイプして見る →",
-      },
-      apps: [
-        { name: "Bonjour Miyu", desc: "AIフラッシュカード＆単語トラッカー — 日仏語学習アプリ" },
-        { name: "Miyu Prep",    desc: "マクロ管理・ワークアウト記録・体重管理 — コンペ準備トラッカー" },
-        { name: "次のアプリ",   desc: "現在開発中" },
-      ],
-    },
-    contact: {
-      label: "コンタクト",
-      h2: "お気軽にご連絡ください",
-      h2italic: "いつでもどうぞ。",
-      desc: "コラボ、プロジェクト、ただの挨拶でも — いつでも歓迎です。",
-      emailBtn: "miyuba0192@gmail.com ↗",
-      supportLabel: "サポート",
-      supportH2: "☕ もし私のコンテンツが役に立ったなら",
-      supportDesc: "動画もアプリもこのサイトも、全部ひとりで趣味の時間に無料で作っています。",
-      supportSpan: "「Buy Me a Coffee」は¥150からの少額チップを送れるプラットフォームです。",
-      supportEnd: "サブスクでも義務でもなく、ただ「続けて」と伝える一番優しい方法です。🙏",
-      supportBtn: "☕ コーヒーを送る",
-      footer: "© 2026 Miyu Sato — All rights reserved",
-    },
-  },
-
   fr: {
     nav: {
       about: "À propos",
@@ -213,22 +119,21 @@ export const translations = {
           { num: "1 200+", label: "Abonnés" },
           { num: "Active", label: "Chaîne YouTube" },
           { num: "2",      label: "Apps linguistiques" },
-          { num: "3",      label: "Récompenses" },
         ],
         link: "Voir le portfolio",
       },
     },
     about: {
       label: "À propos",
-      h2line: "Créer ce qui",
-      h2italic: "me manquait.",
-      bio: "Créatrice basée à Tokyo — j'apprends le français, je développe des apps, et je documente tout sur YouTube. Je suis encore en chemin, et j'ai bien l'intention de continuer.",
+      h2line: "Tout m'intéresse,",
+      h2italic: "alors je crée.",
+      bio: "J'apprenais le français, l'app dont j'avais besoin n'existait pas — alors je l'ai construite. Maintenant je documente tout depuis Tokyo : les langues, le code, le design, la vie qui se construit. Quand quelque chose m'attire, je plonge.",
       btn: "Travailler ensemble",
       pillars: [
-        { title: "Apprentissage des langues", desc: "Français × Japonais — culture, nuances, vraie communication." },
-        { title: "Développement d'apps",      desc: "Créer des outils pour résoudre mes propres problèmes." },
-        { title: "Création de contenu",       desc: "Documenter mon parcours sur YouTube — sans filtre." },
-        { title: "Design",                    desc: "Apprendre l'UI/UX avec Figma et l'IA, itération par itération." },
+        { title: "Création de contenu",       desc: "YouTube, montage vidéo, storytelling — tout documenter, sans filtre." },
+        { title: "Apprentissage des langues", desc: "Français × Japonais — viser la fluidité, conversation après conversation." },
+        { title: "Développement d'apps",      desc: "Construire ce qui me manquait. Deux apps en ligne, d'autres en chemin." },
+        { title: "Design",                    desc: "Apprendre l'UI/UX avec Figma et l'IA — le progrès avant la perfection." },
       ],
     },
     works: {
@@ -259,8 +164,8 @@ export const translations = {
         swipe: "Glisser pour explorer →",
       },
       apps: [
-        { name: "Bonjour Miyu", desc: "Flashcards IA & suivi de vocabulaire — app français × japonais" },
-        { name: "Miyu Prep",    desc: "Macros · entraînement · poids corporel — tracker de préparation" },
+        { name: "Bonjour Miyu",  desc: "Flashcards IA & suivi de vocabulaire — app français × japonais" },
+        { name: "Miyu Prep",     desc: "Macros · entraînement · poids corporel — tracker de préparation" },
         { name: "Prochaine App", desc: "Actuellement en développement" },
       ],
     },

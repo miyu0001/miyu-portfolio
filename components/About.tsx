@@ -6,9 +6,13 @@ import { useLang } from "@/contexts/LanguageContext";
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const pillarIcons = [
-  (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 13h5"/></svg>),
-  (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>),
+  // Content Creation
   (<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>),
+  // Language Learning
+  (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h8M8 13h5"/></svg>),
+  // App Development
+  (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>),
+  // Design Exploration
   (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>),
 ];
 
@@ -36,7 +40,7 @@ export default function About() {
             transition={{ duration: 0.95, ease }}
             className="order-2 lg:order-1"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-[0_12px_52px_rgba(0,0,0,0.1)]" style={{ aspectRatio: "3/4", maxWidth: "500px" }}>
+            <div className="relative rounded-2xl overflow-hidden shadow-[0_12px_52px_rgba(0,0,0,0.1)] max-h-[380px] lg:max-h-none" style={{ aspectRatio: "3/4", maxWidth: "500px" }}>
               <Image src="/images/miyu-about.png" alt="Miyu" fill sizes="(max-width: 1024px) 100vw, 420px" className="object-cover object-center hover:scale-[1.03] transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent" />
             </div>

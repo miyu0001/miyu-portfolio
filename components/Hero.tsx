@@ -222,7 +222,6 @@ export default function Hero() {
                 { color: "#FF5A3C", icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF5A3C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> },
                 { color: "#FF5A3C", icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="#FF5A3C"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg> },
                 { color: "#FF3D8B", icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF3D8B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> },
-                { color: "#FF3D8B", icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF3D8B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ background: item.color + "15" }}>{item.icon}</div>
