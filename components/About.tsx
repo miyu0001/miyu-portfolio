@@ -64,7 +64,7 @@ export default function About() {
               <span className="text-[#FF3D8B] font-serif font-normal italic">{a.h2italic}</span>
             </h2>
 
-            <p className="text-[#666] leading-[1.85] mb-8" style={{ fontSize: "clamp(13px, 1.1vw, 15px)", maxWidth: "420px" }}>
+            <p className="text-[#666] leading-[1.85] mb-8 whitespace-pre-line" style={{ fontSize: "clamp(13px, 1.2vw, 15px)", maxWidth: "440px" }}>
               {a.bio}
             </p>
 

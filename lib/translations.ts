@@ -33,9 +33,9 @@ export const translations = {
     },
     about: {
       label: "About",
-      h2line: "All in,",
-      h2italic: "every time.",
-      bio: "Started learning French, realized the app I needed didn't exist — so I built it. Now I make videos about all of it from Tokyo. The languages, the apps, the design, the figuring-it-out. Whatever pulls my attention, I go all in.",
+      h2line: "Creating things",
+      h2italic: "I wish existed.",
+      bio: "I love watching people grow toward their goals — the slow progress, the small wins, all of it. I'm right there in the middle of it myself.\n\nLanguages, apps, design — learning by making and sharing everything as I go.\n\nIf even one person sees my journey and thinks 'maybe I can try too' — nothing would make me happier.",
       btn: "Work Together",
       pillars: [
         { title: "Content Creation",   desc: "YouTube, video editing, storytelling — documenting the full journey, raw and unfiltered." },
@@ -125,9 +125,9 @@ export const translations = {
     },
     about: {
       label: "À propos",
-      h2line: "Tout m'intéresse,",
-      h2italic: "alors je crée.",
-      bio: "J'apprenais le français, l'app dont j'avais besoin n'existait pas — alors je l'ai construite. Maintenant je documente tout depuis Tokyo : les langues, le code, le design, la vie qui se construit. Quand quelque chose m'attire, je plonge.",
+      h2line: "Créer ce qui",
+      h2italic: "me manquait.",
+      bio: "J'aime regarder les gens avancer vers leurs objectifs — la progression lente, les petites victoires, tout. J'y suis moi aussi, en plein milieu.\n\nLangues, apps, design — j'apprends en créant et je partage tout au fil du chemin.\n\nSi mon parcours donne à ne serait-ce qu'une personne l'envie de se lancer — rien ne me rendrait plus heureuse.",
       btn: "Travailler ensemble",
       pillars: [
         { title: "Création de contenu",       desc: "YouTube, montage vidéo, storytelling — tout documenter, sans filtre." },
