@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLang } from "@/contexts/LanguageContext";
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -12,6 +13,9 @@ const videos = [
 ];
 
 export default function Works() {
+  const { tx } = useLang();
+  const w = tx.works;
+
   return (
     <>
       {/* ── Projects chapter header ── */}
@@ -28,11 +32,11 @@ export default function Works() {
               className="font-black text-[#111] leading-none tracking-tight shrink-0"
               style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)" }}
             >
-              PROJECTS
+              {w.header}
             </h2>
             <div className="flex-1 h-px bg-black/10" />
             <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#BBBBBB] shrink-0">
-              03 works · 2026
+              {w.meta}
             </span>
           </motion.div>
         </div>
@@ -69,12 +73,9 @@ export default function Works() {
                   className="font-bold text-[#111111] leading-[1.1] mb-3"
                   style={{ fontSize: "clamp(1.7rem, 3vw, 2.8rem)" }}
                 >
-                  YouTube Channel
+                  {w.s01.h2}
                 </h2>
-                <p className="text-[13.5px] text-[#888] leading-[1.75] max-w-[520px]">
-                  I create videos documenting my journey of learning French while sharing my daily life in Tokyo.
-                  I wanted to make my learning process more real and visible — not only for myself, but also for others on a similar journey.
-                </p>
+                <p className="text-[13.5px] text-[#888] leading-[1.75] max-w-[520px]">{w.s01.desc}</p>
               </div>
               <a
                 href="https://www.youtube.com/@BonjourMiyu"
@@ -82,7 +83,7 @@ export default function Works() {
                 rel="noopener noreferrer"
                 className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#AAAAAA] hover:text-[#FF5A3C] transition-colors duration-300 shrink-0 mb-1"
               >
-                Watch Channel ↗
+                {w.s01.link}
               </a>
             </div>
           </motion.div>
@@ -113,9 +114,9 @@ export default function Works() {
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#FF5A3C] animate-pulse" />
-              <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#FF5A3C]">Active</span>
+              <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#FF5A3C]">{w.s01.active}</span>
             </div>
-            <span className="text-[11px] font-semibold text-[#999]">1,200+ subscribers and growing</span>
+            <span className="text-[11px] font-semibold text-[#999]">{w.s01.subs}</span>
           </motion.div>
 
           {/* ── Video carousel ── */}
@@ -212,11 +213,9 @@ export default function Works() {
                   className="font-bold text-[#111111] leading-[1.1] mb-3"
                   style={{ fontSize: "clamp(1.7rem, 3vw, 2.8rem)" }}
                 >
-                  App Development
+                  {w.s02.h2}
                 </h2>
-                <p className="text-[13.5px] text-[#666] leading-[1.75] max-w-[520px]">
-                  Building small apps and tools to solve real problems — especially in language learning.
-                </p>
+                <p className="text-[13.5px] text-[#666] leading-[1.75] max-w-[520px]">{w.s02.desc}</p>
               </div>
               <a
                 href="https://bonjour-miyu.vercel.app/"
@@ -224,7 +223,7 @@ export default function Works() {
                 rel="noopener noreferrer"
                 className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#AAAAAA] hover:text-[#FF3D8B] transition-colors duration-300 shrink-0 mb-1"
               >
-                Open App ↗
+                {w.s02.link}
               </a>
             </div>
           </motion.div>
@@ -239,7 +238,7 @@ export default function Works() {
           >
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] animate-pulse" />
-              <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#4ADE80]">2 Apps Live</span>
+              <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#4ADE80]">{w.s02.live}</span>
             </div>
           </motion.div>
 
@@ -283,8 +282,8 @@ export default function Works() {
                 </a>
                 {/* Text below card */}
                 <div className="mt-3 px-0.5">
-                  <p className="font-bold text-[#111] text-[13px] leading-snug mb-0.5">Bonjour Miyu</p>
-                  <p className="text-[#999] text-[11px] leading-snug">AI flashcards & vocab tracker — Japanese × French learning app</p>
+                  <p className="font-bold text-[#111] text-[13px] leading-snug mb-0.5">{w.apps[0].name}</p>
+                  <p className="text-[#999] text-[11px] leading-snug">{w.apps[0].desc}</p>
                 </div>
               </div>
 
@@ -325,8 +324,8 @@ export default function Works() {
                 </a>
                 {/* Text below card */}
                 <div className="mt-3 px-0.5">
-                  <p className="font-bold text-[#111] text-[13px] leading-snug mb-0.5">Miyu Prep</p>
-                  <p className="text-[#999] text-[11px] leading-snug">Macros · workout log · body weight — competition prep tracker</p>
+                  <p className="font-bold text-[#111] text-[13px] leading-snug mb-0.5">{w.apps[1].name}</p>
+                  <p className="text-[#999] text-[11px] leading-snug">{w.apps[1].desc}</p>
                 </div>
               </div>
 
@@ -342,17 +341,17 @@ export default function Works() {
                         <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
                       </svg>
                     </div>
-                    <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#BBB]">Coming Soon</span>
+                    <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#BBB]">{w.s03.coming}</span>
                   </div>
                 </div>
                 <div className="mt-3 px-0.5">
-                  <p className="font-bold text-[#CCC] text-[13px] leading-snug mb-0.5">Next App</p>
-                  <p className="text-[#CCC] text-[11px] leading-snug">Currently in development</p>
+                  <p className="font-bold text-[#CCC] text-[13px] leading-snug mb-0.5">{w.apps[2].name}</p>
+                  <p className="text-[#CCC] text-[11px] leading-snug">{w.apps[2].desc}</p>
                 </div>
               </div>
 
             </div>
-            <p className="text-[10px] text-[#BBBBBB] tracking-[0.1em] mt-2">Swipe to explore →</p>
+            <p className="text-[10px] text-[#BBBBBB] tracking-[0.1em] mt-2">{w.s02.swipe}</p>
           </motion.div>
 
         </div>
@@ -389,14 +388,12 @@ export default function Works() {
                   className="font-bold text-[#111111] leading-[1.1] mb-3"
                   style={{ fontSize: "clamp(1.7rem, 3vw, 2.8rem)" }}
                 >
-                  Design Exploration
+                  {w.s03.h2}
                 </h2>
-                <p className="text-[13.5px] text-[#888] leading-[1.75] max-w-[520px]">
-                  Learning UI/UX design through Figma and AI tools — focusing on progress over perfection.
-                </p>
+                <p className="text-[13.5px] text-[#888] leading-[1.75] max-w-[520px]">{w.s03.desc}</p>
               </div>
               <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#FF5A3C]/60 shrink-0 mb-1">
-                Coming Soon
+                {w.s03.coming}
               </span>
             </div>
           </motion.div>
@@ -441,14 +438,14 @@ export default function Works() {
                       </svg>
                     </div>
                     <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#666] bg-white/75 backdrop-blur-sm px-2.5 py-1 rounded-full border border-black/[0.07]">
-                      Coming Soon
+                      {w.s03.coming}
                     </span>
                   </div>
                 </div>
               ))}
             </div>
             <p className="text-[10px] text-[#CCC] tracking-[0.1em] mb-1">
-              Swipe to explore →
+              {w.s03.swipe}
             </p>
           </motion.div>
 

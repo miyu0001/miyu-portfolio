@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useLang } from "@/contexts/LanguageContext";
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -34,6 +35,9 @@ const socials = [
 ];
 
 export default function Contact() {
+  const { tx } = useLang();
+  const c = tx.contact;
+
   return (
     <section id="contact" className="bg-[#0e0e12] relative overflow-hidden">
 
@@ -55,19 +59,16 @@ export default function Contact() {
           >
             <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FF5A3C] mb-6">
               <span className="w-4 h-px bg-[#FF5A3C]" />
-              Contact
+              {c.label}
             </p>
-            <h3
-              className="font-bold text-white leading-[1.1] mb-4"
-              style={{ fontSize: "clamp(1.8rem, 3vw, 3.2rem)" }}
-            >
-              Feel free to reach out<br />
+            <h3 className="font-bold text-white leading-[1.1] mb-4" style={{ fontSize: "clamp(1.8rem, 3vw, 3.2rem)" }}>
+              {c.h2}<br />
               <span className="font-serif font-normal italic" style={{ color: "#FF3D8B" }}>
-                or connect anytime.
+                {c.h2italic}
               </span>
             </h3>
             <p className="text-white/35 leading-[1.85] mb-8 max-w-[440px]" style={{ fontSize: "clamp(13px, 1.1vw, 15px)" }}>
-              Always happy to connect — whether it&apos;s a collaboration, a project, or just to say hello.
+              {c.desc}
             </p>
 
             {/* Email CTA */}
@@ -75,9 +76,10 @@ export default function Contact() {
               href="mailto:miyuba0192@gmail.com"
               className="inline-flex w-full md:w-auto justify-center items-center gap-2.5 font-bold text-white bg-[#FF5A3C] hover:bg-[#ff4020] transition-colors duration-300 px-6 py-3.5 rounded-full text-[13px] tracking-[0.04em]"
             >
-              miyuba0192@gmail.com ↗
+              {c.emailBtn}
             </a>
-            {/* Social icons — own row, never wraps with email */}
+
+            {/* Social icons */}
             <div className="flex gap-3 mt-4">
               {socials.map((s) => (
                 <a
@@ -95,7 +97,7 @@ export default function Contact() {
           </motion.div>
         </div>
 
-        {/* ── Support / Buy Me a Coffee ── */}
+        {/* ── Support ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -105,37 +107,29 @@ export default function Contact() {
         >
           <div
             className="rounded-2xl p-7 md:p-10 flex flex-col md:flex-row md:items-center gap-6 md:gap-8 border border-white/[0.07]"
-            style={{
-              background: "linear-gradient(135deg, rgba(255,221,0,0.06) 0%, rgba(255,90,60,0.06) 50%, rgba(255,255,255,0.02) 100%)",
-            }}
+            style={{ background: "linear-gradient(135deg, rgba(255,221,0,0.06) 0%, rgba(255,90,60,0.06) 50%, rgba(255,255,255,0.02) 100%)" }}
           >
-            {/* Text */}
             <div className="flex-1">
               <p className="flex items-center gap-2 text-[10px] font-bold tracking-[0.24em] uppercase text-[#FFDD00]/70 mb-3">
                 <span className="w-4 h-px bg-[#FFDD00]/70" />
-                Support
+                {c.supportLabel}
               </p>
               <h3 className="font-bold text-white text-[1.3rem] md:text-[1.6rem] leading-[1.2] mb-3">
-                ☕ If my content has meant something to you
+                {c.supportH2}
               </h3>
               <p className="text-white/40 text-[13px] leading-[1.9] max-w-[560px]">
-                Everything I make — the videos, the apps, this site — I build on my own, in my spare time, completely free.{" "}
-                <span className="text-white/60">
-                  &ldquo;Buy Me a Coffee&rdquo; is a platform where you can send me a small tip
-                  (starting from around ¥150) as a way to say thanks.
-                </span>{" "}
-                There&apos;s no subscription, no pressure at all. It&apos;s simply the kindest way to tell a creator to keep going. 🙏
+                {c.supportDesc}{" "}
+                <span className="text-white/60">{c.supportSpan}</span>{" "}
+                {c.supportEnd}
               </p>
             </div>
-
-            {/* CTA button */}
             <a
               href="https://buymeacoffee.com/bonjour.miyu"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full md:w-auto shrink-0 justify-center inline-flex items-center gap-2.5 font-black text-[#111] bg-[#FFDD00] hover:bg-[#ffe933] active:scale-95 transition-all duration-200 px-7 py-4 rounded-full text-[14px] tracking-[0.03em] whitespace-nowrap shadow-[0_8px_32px_rgba(255,221,0,0.25)]"
             >
-              ☕ Buy Me a Coffee
+              {c.supportBtn}
             </a>
           </div>
         </motion.div>
@@ -145,12 +139,8 @@ export default function Contact() {
       {/* Footer */}
       <div className="border-t border-white/[0.06] py-5">
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-          <p className="text-[10px] text-white/20 tracking-[0.14em]">
-            © 2026 Miyu Sato — All rights reserved
-          </p>
-          <p className="text-[10px] text-white/15 tracking-[0.1em]">
-            @miyu0001_
-          </p>
+          <p className="text-[10px] text-white/20 tracking-[0.14em]">{c.footer}</p>
+          <p className="text-[10px] text-white/15 tracking-[0.1em]">@miyu0001_</p>
         </div>
       </div>
     </section>
