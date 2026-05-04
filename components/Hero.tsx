@@ -4,6 +4,11 @@ import { useLang } from "@/contexts/LanguageContext";
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
+const scrollTo = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+  e.preventDefault();
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
 function CircleBadge() {
   return (
     <motion.div
@@ -117,8 +122,8 @@ export default function Hero() {
             </p>
           </div>
           <div className="flex flex-col gap-2.5 mt-6">
-            <a href="#works"   className="btn btn-dark w-full">{h.btn1}</a>
-            <a href="#contact" className="btn btn-outline w-full">{h.btn2}</a>
+            <a href="#works"   onClick={scrollTo("works")}   className="btn btn-dark w-full">{h.btn1}</a>
+            <a href="#contact" onClick={scrollTo("contact")} className="btn btn-outline w-full">{h.btn2}</a>
           </div>
         </motion.div>
       </div>
@@ -197,8 +202,8 @@ export default function Hero() {
           </h1>
           <p className="text-[11px] font-semibold tracking-[0.14em] text-[#BBB] mb-8">{h.desktopTagline}</p>
           <div className="flex flex-col gap-3">
-            <a href="#works"   className="btn btn-dark">{h.btn1}</a>
-            <a href="#contact" className="btn btn-outline">{h.btn2}</a>
+            <a href="#works"   onClick={scrollTo("works")}   className="btn btn-dark">{h.btn1}</a>
+            <a href="#contact" onClick={scrollTo("contact")} className="btn btn-outline">{h.btn2}</a>
           </div>
         </motion.div>
 

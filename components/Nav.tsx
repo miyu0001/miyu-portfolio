@@ -6,6 +6,11 @@ import { Lang } from "@/lib/translations";
 
 const LANGS: Lang[] = ["en", "fr"];
 
+const scrollTo = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+  e.preventDefault();
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const { lang, setLang, tx } = useLang();
@@ -46,13 +51,14 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-8">
             {[
-              { label: tx.nav.about,    href: "#about" },
-              { label: tx.nav.projects, href: "#works" },
-              { label: tx.nav.contact,  href: "#contact" },
+              { label: tx.nav.about,    href: "#about",   id: "about" },
+              { label: tx.nav.projects, href: "#works",   id: "works" },
+              { label: tx.nav.contact,  href: "#contact", id: "contact" },
             ].map((l) => (
               <a
                 key={l.href}
                 href={l.href}
+                onClick={scrollTo(l.id)}
                 className="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#888888] hover:text-[#111111] transition-colors duration-300"
               >
                 {l.label}
@@ -106,6 +112,7 @@ export default function Nav() {
           </div>
           <a
             href="#contact"
+            onClick={scrollTo("contact")}
             className="text-[11px] font-bold tracking-[0.16em] uppercase text-[#111111]"
           >
             {tx.nav.contact}

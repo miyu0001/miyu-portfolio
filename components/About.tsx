@@ -5,6 +5,11 @@ import { useLang } from "@/contexts/LanguageContext";
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
+const scrollTo = (id: string) => (e: React.MouseEvent<HTMLAnchorElement>) => {
+  e.preventDefault();
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+
 const pillarIcons = [
   // Content Creation
   (<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>),
@@ -88,7 +93,7 @@ export default function About() {
               ))}
             </div>
 
-            <a href="#contact" className="btn btn-dark self-start">{a.btn}</a>
+            <a href="#contact" onClick={scrollTo("contact")} className="btn btn-dark self-start">{a.btn}</a>
           </motion.div>
 
         </div>
