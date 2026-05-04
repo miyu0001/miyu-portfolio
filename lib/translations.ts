@@ -50,7 +50,7 @@ export const translations = {
       s01: {
         label: "YouTube Channel",
         h2: "YouTube Channel",
-        desc: "I create videos documenting my journey of learning French while sharing my daily life in Tokyo. I wanted to make my learning process more real and visible — not only for myself, but also for others on a similar journey.",
+        desc: "I make videos about learning French, building apps, and everything else I'm figuring out along the way. Documenting the full process from Tokyo — raw, real, unfiltered.",
         link: "Watch Channel ↗",
         active: "Active",
         subs: "1,200+ subscribers and growing",
@@ -59,7 +59,7 @@ export const translations = {
       s02: {
         label: "App Development",
         h2: "App Development",
-        desc: "Building small apps and tools to solve real problems — especially in language learning.",
+        desc: "Building tools that started as my own problems — a language learning app, a fitness tracker, and more always in progress.",
         link: "Open App ↗",
         live: "2 Apps Live",
         swipe: "Swipe to explore →",
@@ -142,7 +142,7 @@ export const translations = {
       s01: {
         label: "Chaîne YouTube",
         h2: "Chaîne YouTube",
-        desc: "Je crée des vidéos qui documentent mon apprentissage du français et ma vie quotidienne à Tokyo. Rendre mon processus visible — pour moi, mais aussi pour ceux qui font le même chemin.",
+        desc: "Je crée des vidéos sur l'apprentissage du français, le développement d'apps, et tout ce que j'explore au fil du chemin. Le processus complet depuis Tokyo — brut et sans filtre.",
         link: "Voir la chaîne ↗",
         active: "Active",
         subs: "1 200+ abonnés et en croissance",
@@ -151,7 +151,7 @@ export const translations = {
       s02: {
         label: "Développement d'apps",
         h2: "Développement d'apps",
-        desc: "Créer de petites apps pour résoudre de vrais problèmes — notamment dans l'apprentissage des langues.",
+        desc: "Construire des outils nés de mes propres besoins — une app d'apprentissage des langues, un tracker fitness, et d'autres en cours.",
         link: "Ouvrir l'app ↗",
         live: "2 Apps en ligne",
         swipe: "Glisser pour explorer →",
