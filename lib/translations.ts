@@ -125,9 +125,9 @@ export const translations = {
     },
     about: {
       label: "À propos",
-      h2line: "Créer ce qui",
-      h2italic: "me manquait.",
-      bio: "J'aime regarder les gens avancer vers leurs objectifs — la progression lente, les petites victoires, tout. J'y suis moi aussi, en plein milieu.\n\nLangues, apps, design — j'apprends en créant et je partage tout au fil du chemin.\n\nSi mon parcours donne à ne serait-ce qu'une personne l'envie de se lancer — rien ne me rendrait plus heureuse.",
+      h2line: "Créer",
+      h2italic: "Ce qui me manquait.",
+      bio: "J'aime regarder les gens avancer vers leurs objectifs — la progression lente, les petites victoires, tout. J'y suis moi aussi, en plein milieu.\n\nLangues, apps, design — j'apprends en faisant, je partage en avançant.\n\nSi mon parcours donne à ne serait-ce qu'une personne l'envie de se lancer — rien ne me rendrait plus heureuse.",
       btn: "Travailler ensemble",
       pillars: [
         { title: "Création de contenu",       desc: "YouTube, montage vidéo, storytelling — tout documenter, sans filtre." },
