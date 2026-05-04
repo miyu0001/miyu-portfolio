@@ -251,130 +251,108 @@ export default function Works() {
             transition={{ duration: 0.7, ease }}
           >
             <div
-              className="flex gap-4 overflow-x-auto pb-3"
+              className="flex gap-5 overflow-x-auto pb-3"
               style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
             >
 
-              {/* ── Card 1: Bonjour Miyu — French learning app ── */}
-              <a
-                href="https://bonjour-miyu.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative shrink-0 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300"
-                style={{
-                  width: "calc(25% - 12px)", minWidth: "260px", aspectRatio: "16/9",
-                  scrollSnapAlign: "start", display: "block",
-                  background: "linear-gradient(135deg, #12042A 0%, #2D0E6B 55%, #1A0845 100%)",
-                }}
-              >
-                {/* Decorative: giant kanji watermark */}
-                <span aria-hidden className="absolute -bottom-6 -right-4 text-white/[0.05] font-black select-none leading-none pointer-events-none" style={{ fontSize: "140px" }}>語</span>
-                {/* French flag left stripe */}
-                <div aria-hidden className="absolute top-0 left-0 bottom-0 w-[3px]" style={{ background: "linear-gradient(180deg, #002395 33%, #fff 33% 66%, #ED2939 66%)" }} />
-                {/* Pink glow */}
-                <div aria-hidden className="absolute top-0 right-0 w-36 h-36 rounded-full opacity-25 blur-3xl" style={{ background: "#FF3D8B" }} />
-
-                <div className="absolute inset-0 pl-5 pr-4 py-4 flex flex-col justify-between">
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/30 text-[8px] font-black tracking-[0.22em] uppercase">Bonjour Miyu</span>
-                    <div className="flex items-center gap-1 bg-[#FF3D8B] px-2 py-0.5 rounded-full">
-                      <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-                      <span className="text-[7px] font-black text-white tracking-[0.1em]">LIVE</span>
-                    </div>
+              {/* ── Card 1: Bonjour Miyu ── */}
+              <div className="shrink-0" style={{ width: "calc(25% - 12px)", minWidth: "260px", scrollSnapAlign: "start" }}>
+                <a
+                  href="https://bonjour-miyu.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block rounded-2xl overflow-hidden"
+                  style={{ aspectRatio: "16/9", background: "linear-gradient(135deg, #6D28D9 0%, #A855F7 50%, #EC4899 100%)" }}
+                >
+                  {/* Soft radial light */}
+                  <div aria-hidden className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.18) 0%, transparent 60%)" }} />
+                  {/* Big kanji watermark */}
+                  <span aria-hidden className="absolute -bottom-3 -right-2 select-none pointer-events-none font-black text-white/[0.07] leading-none" style={{ fontSize: "130px" }}>語</span>
+                  {/* LIVE badge */}
+                  <div className="absolute top-3 right-3 flex items-center gap-1 bg-white/20 backdrop-blur-sm border border-white/30 px-2 py-0.5 rounded-full">
+                    <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
+                    <span className="text-[7px] font-black text-white tracking-[0.1em]">LIVE</span>
                   </div>
-
-                  <div>
-                    <p className="text-white/35 text-[9px] font-semibold tracking-[0.06em] mb-2">language learning app</p>
-                    <h3 className="font-black text-white leading-[1.0] mb-2.5" style={{ fontSize: "clamp(17px, 3.5vw, 26px)" }}>
+                  {/* Centered poster text */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+                    <span className="text-[22px] mb-3">🇫🇷 🇯🇵</span>
+                    <p className="font-black text-white leading-[1.05] group-hover:scale-[1.03] transition-transform duration-300" style={{ fontSize: "clamp(18px, 3.5vw, 26px)" }}>
                       Apprendre<br />le français.
-                    </h3>
-                    <p className="text-white/40 text-[9px] leading-relaxed">
-                      AI flashcards · vocab tracker<br />Japanese × French
                     </p>
                   </div>
-
-                  <div className="flex items-center justify-between">
-                    <span className="text-[13px]">🇫🇷 🇯🇵</span>
-                    <span className="text-white/25 text-[8px] font-bold tracking-[0.12em]">Open app ↗</span>
-                  </div>
+                </a>
+                {/* Text below card */}
+                <div className="mt-3 px-0.5">
+                  <p className="font-bold text-[#111] text-[13px] leading-snug mb-0.5">Bonjour Miyu</p>
+                  <p className="text-[#999] text-[11px] leading-snug">AI flashcards & vocab tracker — Japanese × French learning app</p>
                 </div>
-              </a>
+              </div>
 
-              {/* ── Card 2: Miyu Prep — fitness app ── */}
-              <a
-                href="https://miyu-competition-prep.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative shrink-0 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300"
-                style={{
-                  width: "calc(25% - 12px)", minWidth: "260px", aspectRatio: "16/9",
-                  scrollSnapAlign: "start", display: "block",
-                  background: "linear-gradient(135deg, #060810 0%, #0C1220 60%, #060810 100%)",
-                }}
-              >
-                {/* Dot grid */}
-                <div aria-hidden className="absolute inset-0 overflow-hidden opacity-[0.12] pointer-events-none">
-                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <pattern id="pdots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
-                        <circle cx="1.5" cy="1.5" r="1" fill="white" />
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#pdots)" />
-                  </svg>
-                </div>
-                {/* Orange glow */}
-                <div aria-hidden className="absolute bottom-0 right-0 w-40 h-40 rounded-full opacity-30 blur-3xl" style={{ background: "#FF5A3C" }} />
-
-                <div className="absolute inset-0 p-4 py-4 flex flex-col justify-between">
-                  <div className="flex items-center justify-between">
-                    <span className="text-white/30 text-[8px] font-black tracking-[0.22em] uppercase">Miyu Prep</span>
-                    <div className="flex items-center gap-1 bg-[#4ADE80] px-2 py-0.5 rounded-full">
-                      <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-                      <span className="text-[7px] font-black text-white tracking-[0.1em]">LIVE</span>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="text-white/35 text-[9px] font-semibold tracking-[0.06em] mb-2">fitness & nutrition tracker</p>
-                    <h3 className="font-black text-white leading-[1.0] mb-2.5" style={{ fontSize: "clamp(17px, 3.5vw, 26px)" }}>
-                      Corps &<br />Performance.
-                    </h3>
-                    <p className="text-white/40 text-[9px] leading-relaxed">
-                      Macros · workout log · body weight<br />Competition prep tracker
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <span className="text-[13px]">💪 🏆 🔥</span>
-                    <span className="text-white/25 text-[8px] font-bold tracking-[0.12em]">Open app ↗</span>
-                  </div>
-                </div>
-              </a>
-
-              {/* ── Card 3: Coming Soon ── */}
-              <div
-                className="relative shrink-0 rounded-2xl overflow-hidden"
-                style={{
-                  width: "calc(25% - 12px)", minWidth: "260px", aspectRatio: "16/9",
-                  scrollSnapAlign: "start",
-                  background: "linear-gradient(135deg, #F0F0F5 0%, #F8F8FC 100%)",
-                }}
-              >
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
-                  <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              {/* ── Card 2: Miyu Prep ── */}
+              <div className="shrink-0" style={{ width: "calc(25% - 12px)", minWidth: "260px", scrollSnapAlign: "start" }}>
+                <a
+                  href="https://miyu-competition-prep.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block rounded-2xl overflow-hidden"
+                  style={{ aspectRatio: "16/9", background: "linear-gradient(135deg, #0A0A0A 0%, #1A1A2E 100%)" }}
+                >
+                  {/* Dot grid */}
+                  <div aria-hidden className="absolute inset-0 opacity-[0.13] pointer-events-none">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                      <defs>
+                        <pattern id="pdots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+                          <circle cx="1.5" cy="1.5" r="1" fill="white" />
+                        </pattern>
+                      </defs>
+                      <rect width="100%" height="100%" fill="url(#pdots)" />
                     </svg>
                   </div>
-                  <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#999] bg-white/80 backdrop-blur-sm px-2.5 py-1 rounded-full border border-black/[0.06]">
-                    Coming Soon
-                  </span>
+                  {/* Orange glow */}
+                  <div aria-hidden className="absolute -bottom-8 -right-8 w-48 h-48 rounded-full blur-3xl" style={{ background: "rgba(255,90,60,0.35)" }} />
+                  {/* LIVE badge */}
+                  <div className="absolute top-3 right-3 flex items-center gap-1 bg-[#4ADE80]/20 backdrop-blur-sm border border-[#4ADE80]/40 px-2 py-0.5 rounded-full">
+                    <span className="w-1 h-1 rounded-full bg-[#4ADE80] animate-pulse" />
+                    <span className="text-[7px] font-black text-[#4ADE80] tracking-[0.1em]">LIVE</span>
+                  </div>
+                  {/* Centered poster text */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
+                    <span className="text-[22px] mb-3">💪 🏆</span>
+                    <p className="font-black text-white leading-[1.05] group-hover:scale-[1.03] transition-transform duration-300" style={{ fontSize: "clamp(18px, 3.5vw, 26px)" }}>
+                      Corps &<br />Performance.
+                    </p>
+                  </div>
+                </a>
+                {/* Text below card */}
+                <div className="mt-3 px-0.5">
+                  <p className="font-bold text-[#111] text-[13px] leading-snug mb-0.5">Miyu Prep</p>
+                  <p className="text-[#999] text-[11px] leading-snug">Macros · workout log · body weight — competition prep tracker</p>
+                </div>
+              </div>
+
+              {/* ── Card 3: Coming Soon ── */}
+              <div className="shrink-0" style={{ width: "calc(25% - 12px)", minWidth: "260px", scrollSnapAlign: "start" }}>
+                <div
+                  className="relative block rounded-2xl overflow-hidden"
+                  style={{ aspectRatio: "16/9", background: "linear-gradient(135deg, #F2F2F7 0%, #F8F8FC 100%)" }}
+                >
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                    <div className="w-9 h-9 rounded-full bg-white shadow-sm flex items-center justify-center">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#BBB" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                      </svg>
+                    </div>
+                    <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#BBB]">Coming Soon</span>
+                  </div>
+                </div>
+                <div className="mt-3 px-0.5">
+                  <p className="font-bold text-[#CCC] text-[13px] leading-snug mb-0.5">Next App</p>
+                  <p className="text-[#CCC] text-[11px] leading-snug">Currently in development</p>
                 </div>
               </div>
 
             </div>
-            <p className="text-[10px] text-[#AAAAAA] tracking-[0.1em] mt-2">Swipe to explore →</p>
+            <p className="text-[10px] text-[#BBBBBB] tracking-[0.1em] mt-2">Swipe to explore →</p>
           </motion.div>
 
         </div>
