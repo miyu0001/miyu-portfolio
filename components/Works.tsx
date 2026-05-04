@@ -28,7 +28,7 @@ export default function Works() {
               className="font-black text-[#111] leading-none tracking-tight shrink-0"
               style={{ fontSize: "clamp(1.8rem, 4vw, 3.2rem)" }}
             >
-              PROJECTS
+              PROJETS
             </h2>
             <div className="flex-1 h-px bg-black/10" />
             <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-[#BBBBBB] shrink-0">
@@ -264,42 +264,38 @@ export default function Works() {
                 style={{
                   width: "calc(25% - 12px)", minWidth: "260px", aspectRatio: "16/9",
                   scrollSnapAlign: "start", display: "block",
-                  background: "linear-gradient(135deg, #1A0638 0%, #2D1065 60%, #1A0A40 100%)",
+                  background: "linear-gradient(135deg, #12042A 0%, #2D0E6B 55%, #1A0845 100%)",
                 }}
               >
-                {/* Glow */}
-                <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-30 blur-2xl" style={{ background: "#FF3D8B" }} />
+                {/* Decorative: giant kanji watermark */}
+                <span aria-hidden className="absolute -bottom-6 -right-4 text-white/[0.05] font-black select-none leading-none pointer-events-none" style={{ fontSize: "140px" }}>語</span>
+                {/* French flag left stripe */}
+                <div aria-hidden className="absolute top-0 left-0 bottom-0 w-[3px]" style={{ background: "linear-gradient(180deg, #002395 33%, #fff 33% 66%, #ED2939 66%)" }} />
+                {/* Pink glow */}
+                <div aria-hidden className="absolute top-0 right-0 w-36 h-36 rounded-full opacity-25 blur-3xl" style={{ background: "#FF3D8B" }} />
 
-                <div className="absolute inset-0 p-4 flex flex-col justify-between">
-                  {/* Top row */}
+                <div className="absolute inset-0 pl-5 pr-4 py-4 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
-                    <span className="text-white/40 text-[8px] font-black tracking-[0.2em] uppercase">Bonjour Miyu</span>
+                    <span className="text-white/30 text-[8px] font-black tracking-[0.22em] uppercase">Bonjour Miyu</span>
                     <div className="flex items-center gap-1 bg-[#FF3D8B] px-2 py-0.5 rounded-full">
                       <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-                      <span className="text-[7px] font-black text-white tracking-[0.12em]">LIVE</span>
+                      <span className="text-[7px] font-black text-white tracking-[0.1em]">LIVE</span>
                     </div>
                   </div>
 
-                  {/* Word card */}
-                  <div className="bg-white/[0.08] border border-white/[0.1] rounded-xl px-4 py-3 mx-auto w-full max-w-[180px]">
-                    <p className="text-white/40 text-[7px] font-bold tracking-[0.16em] uppercase mb-1">Today&apos;s word</p>
-                    <p className="text-white font-black text-[22px] leading-none mb-1">Bonjour</p>
-                    <p className="text-[#FF3D8B]/80 text-[10px] font-semibold">こんにちは</p>
-                    <div className="flex gap-1 mt-2.5">
-                      {[1,0,0,0,0].map((on, i) => (
-                        <div key={i} className="h-[2px] flex-1 rounded-full" style={{ background: on ? "#FF3D8B" : "rgba(255,255,255,0.12)" }} />
-                      ))}
-                    </div>
+                  <div>
+                    <p className="text-white/35 text-[9px] font-semibold tracking-[0.06em] mb-2">language learning app</p>
+                    <h3 className="font-black text-white leading-[1.0] mb-2.5" style={{ fontSize: "clamp(17px, 3.5vw, 26px)" }}>
+                      Apprendre<br />le français.
+                    </h3>
+                    <p className="text-white/40 text-[9px] leading-relaxed">
+                      AI flashcards · vocab tracker<br />Japanese × French
+                    </p>
                   </div>
 
-                  {/* Bottom row */}
-                  <div className="flex gap-2">
-                    <div className="flex-1 bg-white/[0.07] rounded-lg py-1.5 text-center">
-                      <span className="text-white/40 text-[8px] font-bold">もう一度</span>
-                    </div>
-                    <div className="flex-1 rounded-lg py-1.5 text-center" style={{ background: "#FF3D8B" }}>
-                      <span className="text-white text-[8px] font-black">わかった!</span>
-                    </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[13px]">🇫🇷 🇯🇵</span>
+                    <span className="text-white/25 text-[8px] font-bold tracking-[0.12em]">Open app ↗</span>
                   </div>
                 </div>
               </a>
@@ -313,48 +309,45 @@ export default function Works() {
                 style={{
                   width: "calc(25% - 12px)", minWidth: "260px", aspectRatio: "16/9",
                   scrollSnapAlign: "start", display: "block",
-                  background: "linear-gradient(135deg, #070E1C 0%, #0C1A30 60%, #091422 100%)",
+                  background: "linear-gradient(135deg, #060810 0%, #0C1220 60%, #060810 100%)",
                 }}
               >
-                {/* Glow */}
-                <div className="absolute bottom-0 left-0 w-28 h-28 rounded-full opacity-20 blur-2xl" style={{ background: "#FF5A3C" }} />
+                {/* Dot grid */}
+                <div aria-hidden className="absolute inset-0 overflow-hidden opacity-[0.12] pointer-events-none">
+                  <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <pattern id="pdots" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+                        <circle cx="1.5" cy="1.5" r="1" fill="white" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#pdots)" />
+                  </svg>
+                </div>
+                {/* Orange glow */}
+                <div aria-hidden className="absolute bottom-0 right-0 w-40 h-40 rounded-full opacity-30 blur-3xl" style={{ background: "#FF5A3C" }} />
 
-                <div className="absolute inset-0 p-4 flex flex-col justify-between">
-                  {/* Top row */}
+                <div className="absolute inset-0 p-4 py-4 flex flex-col justify-between">
                   <div className="flex items-center justify-between">
-                    <span className="text-white/40 text-[8px] font-black tracking-[0.2em] uppercase">Miyu Prep</span>
-                    <div className="flex items-center gap-1 bg-[#4ADE80]/90 px-2 py-0.5 rounded-full">
+                    <span className="text-white/30 text-[8px] font-black tracking-[0.22em] uppercase">Miyu Prep</span>
+                    <div className="flex items-center gap-1 bg-[#4ADE80] px-2 py-0.5 rounded-full">
                       <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
-                      <span className="text-[7px] font-black text-white tracking-[0.12em]">LIVE</span>
+                      <span className="text-[7px] font-black text-white tracking-[0.1em]">LIVE</span>
                     </div>
                   </div>
 
-                  {/* Macro row */}
-                  <div className="grid grid-cols-3 gap-2">
-                    {[
-                      { label: "Protein", val: "142g", color: "#FF5A3C" },
-                      { label: "Carbs",   val: "180g", color: "#60A5FA" },
-                      { label: "Fat",     val: "55g",  color: "#FBBF24" },
-                    ].map((m) => (
-                      <div key={m.label} className="bg-white/[0.06] border border-white/[0.07] rounded-lg py-2 text-center">
-                        <div className="w-1.5 h-1.5 rounded-full mx-auto mb-1" style={{ background: m.color }} />
-                        <p className="text-white font-black text-[11px] leading-none">{m.val}</p>
-                        <p className="text-white/30 text-[7px] mt-0.5">{m.label}</p>
-                      </div>
-                    ))}
+                  <div>
+                    <p className="text-white/35 text-[9px] font-semibold tracking-[0.06em] mb-2">fitness & nutrition tracker</p>
+                    <h3 className="font-black text-white leading-[1.0] mb-2.5" style={{ fontSize: "clamp(17px, 3.5vw, 26px)" }}>
+                      Corps &<br />Performance.
+                    </h3>
+                    <p className="text-white/40 text-[9px] leading-relaxed">
+                      Macros · workout log · body weight<br />Competition prep tracker
+                    </p>
                   </div>
 
-                  {/* Streak bar */}
-                  <div className="bg-white/[0.06] border border-white/[0.07] rounded-lg px-3 py-2 flex items-center justify-between">
-                    <div>
-                      <p className="text-white/30 text-[7px] font-bold tracking-[0.14em] uppercase">Weekly Streak</p>
-                      <p className="text-white font-black text-[13px] leading-tight">12 weeks 🔥</p>
-                    </div>
-                    <div className="flex gap-0.5">
-                      {[1,1,1,1,0,0,0].map((on, i) => (
-                        <div key={i} className="w-2 h-2 rounded-sm" style={{ background: on ? "#FF5A3C" : "rgba(255,255,255,0.08)" }} />
-                      ))}
-                    </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[13px]">💪 🏆 🔥</span>
+                    <span className="text-white/25 text-[8px] font-bold tracking-[0.12em]">Open app ↗</span>
                   </div>
                 </div>
               </a>
