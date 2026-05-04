@@ -238,8 +238,8 @@ export default function Works() {
             className="flex items-center gap-3 mb-6 px-1"
           >
             <div className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF3D8B] animate-pulse" />
-              <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#FF3D8B]">In Progress</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] animate-pulse" />
+              <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-[#4ADE80]">2 Apps Live</span>
             </div>
           </motion.div>
 
@@ -254,60 +254,132 @@ export default function Works() {
               className="flex gap-4 overflow-x-auto pb-3"
               style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch", scrollbarWidth: "none" }}
             >
-              {/* Card 1: Bonjour Miyu — live */}
+
+              {/* ── Card 1: Bonjour Miyu — French learning app ── */}
               <a
                 href="https://bonjour-miyu.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative shrink-0 rounded-2xl overflow-hidden"
-                style={{ width: "calc(25% - 12px)", minWidth: "260px", aspectRatio: "16/9", scrollSnapAlign: "start", display: "block" }}
+                className="group relative shrink-0 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300"
+                style={{
+                  width: "calc(25% - 12px)", minWidth: "260px", aspectRatio: "16/9",
+                  scrollSnapAlign: "start", display: "block",
+                  background: "linear-gradient(135deg, #1A0638 0%, #2D1065 60%, #1A0A40 100%)",
+                }}
               >
-                <Image
-                  src="/images/app-hero.png"
-                  alt="Bonjour Miyu App"
-                  fill
-                  sizes="(max-width: 768px) 80vw, 25vw"
-                  className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                <div className="absolute top-3 left-3 flex items-center gap-1.5 bg-[#FF3D8B]/90 px-2.5 py-1 rounded-full">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                  <span className="text-[9px] font-bold text-white tracking-[0.1em]">LIVE</span>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-3">
-                  <p className="text-white font-bold text-[12px] mb-0.5">Bonjour Miyu</p>
-                  <p className="text-white/55 text-[10px]">French × Japanese learning app ↗</p>
+                {/* Glow */}
+                <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-30 blur-2xl" style={{ background: "#FF3D8B" }} />
+
+                <div className="absolute inset-0 p-4 flex flex-col justify-between">
+                  {/* Top row */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/40 text-[8px] font-black tracking-[0.2em] uppercase">Bonjour Miyu</span>
+                    <div className="flex items-center gap-1 bg-[#FF3D8B] px-2 py-0.5 rounded-full">
+                      <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
+                      <span className="text-[7px] font-black text-white tracking-[0.12em]">LIVE</span>
+                    </div>
+                  </div>
+
+                  {/* Word card */}
+                  <div className="bg-white/[0.08] border border-white/[0.1] rounded-xl px-4 py-3 mx-auto w-full max-w-[180px]">
+                    <p className="text-white/40 text-[7px] font-bold tracking-[0.16em] uppercase mb-1">Today&apos;s word</p>
+                    <p className="text-white font-black text-[22px] leading-none mb-1">Bonjour</p>
+                    <p className="text-[#FF3D8B]/80 text-[10px] font-semibold">こんにちは</p>
+                    <div className="flex gap-1 mt-2.5">
+                      {[1,0,0,0,0].map((on, i) => (
+                        <div key={i} className="h-[2px] flex-1 rounded-full" style={{ background: on ? "#FF3D8B" : "rgba(255,255,255,0.12)" }} />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom row */}
+                  <div className="flex gap-2">
+                    <div className="flex-1 bg-white/[0.07] rounded-lg py-1.5 text-center">
+                      <span className="text-white/40 text-[8px] font-bold">もう一度</span>
+                    </div>
+                    <div className="flex-1 rounded-lg py-1.5 text-center" style={{ background: "#FF3D8B" }}>
+                      <span className="text-white text-[8px] font-black">わかった!</span>
+                    </div>
+                  </div>
                 </div>
               </a>
 
-              {/* Cards 2–3: Coming Soon */}
-              {[
-                { bg: "linear-gradient(135deg, #FFE0EE 0%, #FFF0F6 100%)" },
-                { bg: "linear-gradient(135deg, #FFE8E6 0%, #FFF0EF 100%)" },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="relative shrink-0 rounded-2xl overflow-hidden"
-                  style={{
-                    width: "calc(25% - 12px)",
-                    minWidth: "260px",
-                    aspectRatio: "16/9",
-                    scrollSnapAlign: "start",
-                    background: item.bg,
-                  }}
-                >
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
-                    <div className="w-8 h-8 rounded-full bg-white/80 shadow-sm flex items-center justify-center">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                      </svg>
+              {/* ── Card 2: Miyu Prep — fitness app ── */}
+              <a
+                href="https://miyu-competition-prep.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative shrink-0 rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300"
+                style={{
+                  width: "calc(25% - 12px)", minWidth: "260px", aspectRatio: "16/9",
+                  scrollSnapAlign: "start", display: "block",
+                  background: "linear-gradient(135deg, #070E1C 0%, #0C1A30 60%, #091422 100%)",
+                }}
+              >
+                {/* Glow */}
+                <div className="absolute bottom-0 left-0 w-28 h-28 rounded-full opacity-20 blur-2xl" style={{ background: "#FF5A3C" }} />
+
+                <div className="absolute inset-0 p-4 flex flex-col justify-between">
+                  {/* Top row */}
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/40 text-[8px] font-black tracking-[0.2em] uppercase">Miyu Prep</span>
+                    <div className="flex items-center gap-1 bg-[#4ADE80]/90 px-2 py-0.5 rounded-full">
+                      <span className="w-1 h-1 rounded-full bg-white animate-pulse" />
+                      <span className="text-[7px] font-black text-white tracking-[0.12em]">LIVE</span>
                     </div>
-                    <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#666] bg-white/75 backdrop-blur-sm px-2.5 py-1 rounded-full border border-black/[0.07]">
-                      Coming Soon
-                    </span>
+                  </div>
+
+                  {/* Macro row */}
+                  <div className="grid grid-cols-3 gap-2">
+                    {[
+                      { label: "Protein", val: "142g", color: "#FF5A3C" },
+                      { label: "Carbs",   val: "180g", color: "#60A5FA" },
+                      { label: "Fat",     val: "55g",  color: "#FBBF24" },
+                    ].map((m) => (
+                      <div key={m.label} className="bg-white/[0.06] border border-white/[0.07] rounded-lg py-2 text-center">
+                        <div className="w-1.5 h-1.5 rounded-full mx-auto mb-1" style={{ background: m.color }} />
+                        <p className="text-white font-black text-[11px] leading-none">{m.val}</p>
+                        <p className="text-white/30 text-[7px] mt-0.5">{m.label}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Streak bar */}
+                  <div className="bg-white/[0.06] border border-white/[0.07] rounded-lg px-3 py-2 flex items-center justify-between">
+                    <div>
+                      <p className="text-white/30 text-[7px] font-bold tracking-[0.14em] uppercase">Weekly Streak</p>
+                      <p className="text-white font-black text-[13px] leading-tight">12 weeks 🔥</p>
+                    </div>
+                    <div className="flex gap-0.5">
+                      {[1,1,1,1,0,0,0].map((on, i) => (
+                        <div key={i} className="w-2 h-2 rounded-sm" style={{ background: on ? "#FF5A3C" : "rgba(255,255,255,0.08)" }} />
+                      ))}
+                    </div>
                   </div>
                 </div>
-              ))}
+              </a>
+
+              {/* ── Card 3: Coming Soon ── */}
+              <div
+                className="relative shrink-0 rounded-2xl overflow-hidden"
+                style={{
+                  width: "calc(25% - 12px)", minWidth: "260px", aspectRatio: "16/9",
+                  scrollSnapAlign: "start",
+                  background: "linear-gradient(135deg, #F0F0F5 0%, #F8F8FC 100%)",
+                }}
+              >
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
+                  <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#999" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                  </div>
+                  <span className="text-[8px] font-black tracking-[0.22em] uppercase text-[#999] bg-white/80 backdrop-blur-sm px-2.5 py-1 rounded-full border border-black/[0.06]">
+                    Coming Soon
+                  </span>
+                </div>
+              </div>
+
             </div>
             <p className="text-[10px] text-[#AAAAAA] tracking-[0.1em] mt-2">Swipe to explore →</p>
           </motion.div>
