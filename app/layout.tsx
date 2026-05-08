@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
 
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className="w-full min-h-full">
         <Providers>{children}</Providers>
       </body>
+      <GoogleAnalytics gaId="G-D6BL7TCEFF" />
     </html>
   );
 }
